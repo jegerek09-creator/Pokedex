@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
@@ -14,1056 +15,2713 @@
         <div class="menuItem" onclick="showPage('list')">📖 Lista</div>
         <div class="menuItem" onclick="showPage('team')">⚔️ Team</div>
     </div>
-    
+
     <div id="listPage">
 
-    <div class="pokedexPanel">
-    
-    <!--Tytuł z kręcocym się voltrobem-->
-        <h1 style="font-family: sans-serif; font-size: 60px; text-align: center;">
-        P
-        <img src="img/voltrobespin.png" alt="Voltrob" id="voltrobSpin" style="width: 60px;" vertical-align: middle;>
-        KEDEX
-    </h1>
+        <div class="pokedexPanel">
 
-    <style>
-        #voltrobSpin {
-            display: inline-block;
-            animation: spin 4s linear infinite;
-        }
+            <!--Tytuł z kręcocym się voltrobem-->
+            <h1 style="font-family: sans-serif; font-size: 60px; text-align: center;">
+                P
+                <img src="img/voltrobespin.png" alt="Voltrob" id="voltrobSpin" style="width: 60px;" vertical-align:
+                    middle;>
+                KEDEX
+            </h1>
 
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-    </style>
-    
-    <div class="searchBar">
-    <input id="searchInput" type="text" placeholder="Wpisz nazwę Pokemona">
-    <button>🔍</button>
-    </div>
+            <style>
+                #voltrobSpin {
+                    display: inline-block;
+                    animation: spin 4s linear infinite;
+                }
 
-    <div class="filters">
+                @keyframes spin {
+                    from {
+                        transform: rotate(0deg);
+                    }
 
-        <select id="typeFilter">
-            <option value="all">Wszystkie typy</option>
-            <option value="normal">Normalny</option>
-            <option value="fight">Walczący</option>
-            <option value="flying">Latający</option>
-            <option value="poison">trujący</option>
-            <option value="ground">Ziemny</option>
-            <option value="rock">Kiemienny</option>
-            <option value="bug">Robaczy</option>
-            <option value="ghost">Duchowy</option>
-            <option value="steel">Stalowy</option>
-            <option value="fire">Ognisty</option>
-            <option value="water">Wodny</option>
-            <option value="grass">Trawiasty</option>
-            <option value="electric">Elektryczny</option>
-            <option value="psychic">Psychiczny</option>
-            <option value="ice">Lodowy</option>
-            <option value="dragon">Smoczy</option>
-            <option value="Dark">Mroczny</option>
-            <option value="fairy">Baśniowy</option>
-        </select>
+                    to {
+                        transform: rotate(360deg);
+                    }
+                }
+            </style>
 
-        <label>
-            <input type="checkbox" id="favoriteFilter">
-            Tylko ulubione ⭐
-        </label>
+            <div class="searchBar">
+                <input id="searchInput" type="text" placeholder="Wpisz nazwę Pokemona">
+                <button>🔍</button>
+            </div>
 
-    </div>
+            <div class="filters">
 
-    <div class="generation">
+                <select id="typeFilter">
+                    <option value="all">Wszystkie typy</option>
+                    <option value="normal">Normalny</option>
+                    <option value="fight">Walczący</option>
+                    <option value="flying">Latający</option>
+                    <option value="poison">trujący</option>
+                    <option value="ground">Ziemny</option>
+                    <option value="rock">Kiemienny</option>
+                    <option value="bug">Robaczy</option>
+                    <option value="ghost">Duchowy</option>
+                    <option value="steel">Stalowy</option>
+                    <option value="fire">Ognisty</option>
+                    <option value="water">Wodny</option>
+                    <option value="grass">Trawiasty</option>
+                    <option value="electric">Elektryczny</option>
+                    <option value="psychic">Psychiczny</option>
+                    <option value="ice">Lodowy</option>
+                    <option value="dragon">Smoczy</option>
+                    <option value="Dark">Mroczny</option>
+                    <option value="fairy">Baśniowy</option>
+                </select>
 
-        <button class="gen-btn active" onclick="showGen('gen1')">Gen.1</button>
-        <button class="gen-btn" onclick="showGen('gen2', this)">Gen.2</button>
-        <button class="gen-btn" onclick="showGen('gen3', this)">Gen.3</button>
-        <button class="gen-btn" onclick="showGen('gen4', this)">Gen.4</button>
-        <button class="gen-btn" onclick="showGen('gen5', this)">Gen.5</button>
-        <button class="gen-btn" onclick="showGen('gen6', this)">Gen.6</button>
-        <button class="gen-btn" onclick="showGen('gen7', this)">Gen.7</button>
-        <button class="gen-btn" onclick="showGen('gen8', this)">Gen.8</button>
-        <button class="gen-btn" onclick="showGen('gen9', this)">Gen.9</button>
-    </div>
-    
-    <!-- Gen 1 Pokémon List-->
-    <div class="gen-list" id="gen1">
+                <label>
+                    <input type="checkbox" id="favoriteFilter">
+                    Tylko ulubione ⭐
+                </label>
+
+            </div>
+
+            <div class="generation">
+
+                <button class="gen-btn" onclick="showGen('gen1', this)">Gen.1</button>
+                <button class="gen-btn" onclick="showGen('gen2', this)">Gen.2</button>
+                <button class="gen-btn" onclick="showGen('gen3', this)">Gen.3</button>
+                <button class="gen-btn" onclick="showGen('gen4', this)">Gen.4</button>
+                <button class="gen-btn" onclick="showGen('gen5', this)">Gen.5</button>
+                <button class="gen-btn" onclick="showGen('gen6', this)">Gen.6</button>
+                <button class="gen-btn" onclick="showGen('gen7', this)">Gen.7</button>
+                <button class="gen-btn" onclick="showGen('gen8', this)">Gen.8</button>
+                <button class="gen-btn" onclick="showGen('gen9', this)">Gen.9</button>
+            </div>
+
+            <!-- Gen 1 Pokémon List-->
+            <div class="gen-list" id="gen1">
 
 
-        <ol class="pokedex" id="pokemonList">
+                <ol class="pokedex" id="pokemonList">
 
-        <li data-type="grass poison">
-            <span class="pokeball"></span>
-            <img src="img/Bulbasaur.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Bulbasaur.html">Bulbasaur</a>
-            <button onclick="toggleFavorite('Bulbasaur')">☆</button>
-        </li>
-        <li data-type="grass poison">
-            <span class="pokeball"></span>
-            <img src="img/Ivysaur.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Ivysaur.html">Ivysaur</a>
-            <button onclick="toggleFavorite('Ivysaur')">☆</button>
-        </li>
-        <li data-type="grass poison">
-            <span class="pokeball"></span>
-            <img src="img/Venusaur.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Venusaur.html">Venusaur</a>
-            <button onclick="toggleFavorite('Venusaur')">☆</button>
-        </li>
-        <li data-type="fire">
-            <span class="pokeball"></span>
-            <img src="img/Charmander.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Charmander.html">Charmander</a>
-            <button onclick="toggleFavorite('Charmander')">☆</button>
-        </li>
-        <li data-type="fire">
-            <span class="pokeball"></span>
-            <img src="img/Charmeleon.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Charmeleon.html">Charmeleon</a>
-            <button onclick="toggleFavorite('Charmeleon')">☆</button>
-        </li>
-        <li data-type="fire flying">
-            <span class="pokeball"></span>
-            <img src="img/Charizard.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Charizard.html">Charizard</a>
-            <button onclick="toggleFavorite(this,'Charizard')">☆</button>
-        </li>
-        <li data-type="water">
-            <span class="pokeball"></span>
-            <img src="img/Squirtle.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Squirtle.html">Squirtle</a>
-            <button onclick="toggleFavorite('Squirtle')">☆</button>
-        </li>
-        <li data-type="water">
-            <span class="pokeball"></span>
-            <img src="img/Wartortle.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Wartortle.html">Wartortle</a>
-            <button onclick="toggleFavorite('Wartortle')">☆</button>
-        </li>
-        <li data-type="water">
-            <span class="pokeball"></span>
-            <img src="img/Blastoise.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Blastoise.html">Blastoise</a>
-            <button onclick="toggleFavorite('Blastoise')">☆</button>
-        </li>
-        <li data-type="bug">
-            <span class="pokeball"></span>
-            <img src="img/Caterpie.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Caterpie.html">Caterpie</a>
-            <button onclick="toggleFavorite('Caterpie')">☆</button>
-        </li>
-        <li data-type="bug">
-            <span class="pokeball"></span>
-            <img src="img/Metapod.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Metapod.html">Metapod</a>
-            <button onclick="toggleFavorite('Metapod')">☆</button>
-        </li>
-        <li data-type="bug flying">
-            <span class="pokeball"></span>
-            <img src="img/Butterfree.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Butterfree.html">Butterfree</a>
-            <button onclick="toggleFavorite('Butterfree')">☆</button>
-        </li>
-        <li data-type="bug poison">
-            <span class="pokeball"></span>
-            <img src="img/Weedle.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Weedle.html">Weedle</a>
-            <button onclick="toggleFavorite('Weedle')">☆</button>
-        </li>
-        <li data-type="bug poison">
-            <span class="pokeball"></span>
-            <img src="img/Kakuna.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Kakuna.html">Kakuna</a>
-            <button onclick="toggleFavorite('Kakuna')">☆</button>
-        </li>
-        <li data-type="bug poison">
-            <span class="pokeball"></span>
-            <img src="img/Beedrill.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Beedrill.html">Beedrill</a>
-            <button onclick="toggleFavorite('Beedrill')">☆</button>
-        </li>
-        <li data-type="normal flying">
-            <span class="pokeball"></span>
-            <img src="img/Pidgey.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Pidgey.html">Pidgey</a>
-            <button onclick="toggleFavorite('Pidgey')">☆</button>
-        </li>
-        <li data-type="normal flying">
-            <span class="pokeball"></span>
-            <img src="img/Pidgeotto.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Pidgeotto.html">Pidgeotto</a>
-            <button onclick="toggleFavorite('Pidgeotto')">☆</button>
-        </li>
-        <li data-type="normal flying">
-            <span class="pokeball"></span>
-            <img src="img/Pidgeot.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Pidgeot.html">Pidgeot</a>
-            <button onclick="toggleFavorite('Pidgeot')">☆</button>
-        </li>
-        <li data-type="normal">
-            <span class="pokeball"></span>
-            <img src="img/Rattata.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Rattata.html">Rattata</a>
-            <button onclick="toggleFavorite('Rattata')">☆</button>
-        </li>
-        <li data-type="normal">
-            <span class="pokeball"></span>
-            <img src="img/Raticate.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Raticate.html">Raticate</a>
-            <button onclick="toggleFavorite('Raticate')">☆</button>
-        </li>
-        <li data-type="normal flying">
-            <span class="pokeball"></span>
-            <img src="img/Spearow.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Spearow.html">Spearow</a>
-            <button onclick="toggleFavorite('Spearow')">☆</button>
-        </li>
-        <li data-type="normal flying">
-            <span class="pokeball"></span>
-            <img src="img/Fearow.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Fearow.html">Fearow</a>
-            <button onclick="toggleFavorite('Fearow')">☆</button>
-        </li>
-        <li data-type="poison">
-            <span class="pokeball"></span>
-            <img src="img/Ekans.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Ekans.html">Ekans</a>
-            <button onclick="toggleFavorite('Ekans')">☆</button>
-        </li>
-        <li data-type="poison">
-            <span class="pokeball"></span>
-            <img src="img/Arbok.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Arbok.html">Arbok</a>
-            <button onclick="toggleFavorite('Arbok')">☆</button>
-        </li>
-        <li data-type="electric">
-            <span class="pokeball"></span>
-            <img src="img/Pikachu.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Pikachu.html">Pikachu</a>
-            <button onclick="toggleFavorite('Pikachu')">☆</button>
-        </li>
-        <li data-type="electric">
-            <span class="pokeball"></span>
-            <img src="img/Raichu.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Raichu.html">Raichu</a>
-            <button onclick="toggleFavorite('Raichu')">☆</button>
-        </li>
-        <li data-type="ground">
-            <span class="pokeball"></span>
-            <img src="img/Sandshrew.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Sandshrew.html">Sandshrew</a>
-            <button onclick="toggleFavorite('Sandshrew')">☆</button>
-        </li>
-        <li data-type="ground">
-            <span class="pokeball"></span>
-            <img src="img/Sandslash.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Sandslash.html">Sandslash</a>
-            <button onclick="toggleFavorite('Sandslash')">☆</button>
-        </li>
-        <li data-type="poison">
-            <span class="pokeball"></span>
-            <img src="img/nidoranf.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/NidoranF.html">Nidoran♀</a>
-            <button onclick="toggleFavorite('Nidoran♀')">☆</button>
-        </li>
-        <li data-type="poison">
-            <span class="pokeball"></span>
-            <img src="img/Nidorina.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Nidorina.html">Nidorina</a>
-            <button onclick="toggleFavorite('Nidorina')">☆</button>
-        </li>
-        <li data-type="poison ground">
-            <span class="pokeball"></span>
-            <img src="img/Nidoqueen.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Nidoqueen.html">Nidoqueen</a>
-            <button onclick="toggleFavorite('Nidoqueen')">☆</button>
-        </li>
-        <li data-type="poison">
-            <span class="pokeball"></span>
-            <img src="img/nidoranm.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/NidoranM.html">Nidoran♂</a>
-            <button onclick="toggleFavorite('Nidoran♂')">☆</button>
-        </li>
-        <li data-type="poison">
-            <span class="pokeball"></span>
-            <img src="img/Nidorino.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Nidorino.html">Nidorino</a>
-            <button onclick="toggleFavorite('Nidorino')">☆</button>
-        </li>
-        <li data-type="poison ground">
-            <span class="pokeball"></span>
-            <img src="img/Nidoking.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Nidoking.html">Nidoking</a>
-            <button onclick="toggleFavorite('Nidoking')">☆</button>
-        </li>
-        <li data-type="fairy">
-            <span class="pokeball"></span>
-            <img src="img/Clefairy.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Clefairy.html">Clefairy</a>
-            <button onclick="toggleFavorite('Clefairy')">☆</button>
-        </li>
-        <li data-type="fairy">
-            <span class="pokeball"></span>
-            <img src="img/Clefable.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Clefable.html">Clefable</a>
-            <button onclick="toggleFavorite('Clefable')">☆</button>
-        </li>
-        <li data-type="fire">
-            <span class="pokeball"></span>
-            <img src="img/Vulpix.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Vulpix.html">Vulpix</a>
-            <button onclick="toggleFavorite('Vulpix')">☆</button>
-        </li>
-        <li data-type="fire">
-            <span class="pokeball"></span>
-            <img src="img/Ninetales.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Ninetales.html">Ninetales</a>
-            <button onclick="toggleFavorite('Ninetales')">☆</button>
-        </li>
-        <li data-type="normal fairy">
-            <span class="pokeball"></span>
-            <img src="img/Jigglypuff.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Jigglypuff.html">Jigglypuff</a>
-            <button onclick="toggleFavorite('Jigglypuff')">☆</button>
-        </li>
-        <li data-type="normal fairy">
-            <span class="pokeball"></span>
-            <img src="img/Wigglytuff.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Wigglytuff.html">Wigglytuff</a>
-            <button onclick="toggleFavorite('Wigglytuff')">☆</button>
-        </li>
-        <li data-type="poison flying">
-            <span class="pokeball"></span>
-            <img src="img/Zubat.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Zubat.html">Zubat</a>
-            <button onclick="toggleFavorite('Zubat')">☆</button>
-        </li>
-        <li data-type="poison flying">
-            <span class="pokeball"></span>
-            <img src="img/Golbat.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Golbat.html">Golbat</a>
-            <button onclick="toggleFavorite(this,'Golbat')">☆</button>
-        </li>
-        <li data-type="grass poison">
+                    <li data-type="grass poison">
+                        <span class="pokeball"></span>
+                        <img src="img/Bulbasaur.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Bulbasaur.html">Bulbasaur</a>
+                        <button onclick="toggleFavorite('Bulbasaur')">☆</button>
+                    </li>
+                    <li data-type="grass poison">
+                        <span class="pokeball"></span>
+                        <img src="img/Ivysaur.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Ivysaur.html">Ivysaur</a>
+                        <button onclick="toggleFavorite('Ivysaur')">☆</button>
+                    </li>
+                    <li data-type="grass poison">
+                        <span class="pokeball"></span>
+                        <img src="img/Venusaur.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Venusaur.html">Venusaur</a>
+                        <button onclick="toggleFavorite('Venusaur')">☆</button>
+                    </li>
+                    <li data-type="fire">
+                        <span class="pokeball"></span>
+                        <img src="img/Charmander.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Charmander.html">Charmander</a>
+                        <button onclick="toggleFavorite('Charmander')">☆</button>
+                    </li>
+                    <li data-type="fire">
+                        <span class="pokeball"></span>
+                        <img src="img/Charmeleon.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Charmeleon.html">Charmeleon</a>
+                        <button onclick="toggleFavorite('Charmeleon')">☆</button>
+                    </li>
+                    <li data-type="fire flying">
+                        <span class="pokeball"></span>
+                        <img src="img/Charizard.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Charizard.html">Charizard</a>
+                        <button onclick="toggleFavorite(this,'Charizard')">☆</button>
+                    </li>
+                    <li data-type="water">
+                        <span class="pokeball"></span>
+                        <img src="img/Squirtle.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Squirtle.html">Squirtle</a>
+                        <button onclick="toggleFavorite('Squirtle')">☆</button>
+                    </li>
+                    <li data-type="water">
+                        <span class="pokeball"></span>
+                        <img src="img/Wartortle.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Wartortle.html">Wartortle</a>
+                        <button onclick="toggleFavorite('Wartortle')">☆</button>
+                    </li>
+                    <li data-type="water">
+                        <span class="pokeball"></span>
+                        <img src="img/Blastoise.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Blastoise.html">Blastoise</a>
+                        <button onclick="toggleFavorite('Blastoise')">☆</button>
+                    </li>
+                    <li data-type="bug">
+                        <span class="pokeball"></span>
+                        <img src="img/Caterpie.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Caterpie.html">Caterpie</a>
+                        <button onclick="toggleFavorite('Caterpie')">☆</button>
+                    </li>
+                    <li data-type="bug">
+                        <span class="pokeball"></span>
+                        <img src="img/Metapod.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Metapod.html">Metapod</a>
+                        <button onclick="toggleFavorite('Metapod')">☆</button>
+                    </li>
+                    <li data-type="bug flying">
+                        <span class="pokeball"></span>
+                        <img src="img/Butterfree.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Butterfree.html">Butterfree</a>
+                        <button onclick="toggleFavorite('Butterfree')">☆</button>
+                    </li>
+                    <li data-type="bug poison">
+                        <span class="pokeball"></span>
+                        <img src="img/Weedle.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Weedle.html">Weedle</a>
+                        <button onclick="toggleFavorite('Weedle')">☆</button>
+                    </li>
+                    <li data-type="bug poison">
+                        <span class="pokeball"></span>
+                        <img src="img/Kakuna.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Kakuna.html">Kakuna</a>
+                        <button onclick="toggleFavorite('Kakuna')">☆</button>
+                    </li>
+                    <li data-type="bug poison">
+                        <span class="pokeball"></span>
+                        <img src="img/Beedrill.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Beedrill.html">Beedrill</a>
+                        <button onclick="toggleFavorite('Beedrill')">☆</button>
+                    </li>
+                    <li data-type="normal flying">
+                        <span class="pokeball"></span>
+                        <img src="img/Pidgey.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Pidgey.html">Pidgey</a>
+                        <button onclick="toggleFavorite('Pidgey')">☆</button>
+                    </li>
+                    <li data-type="normal flying">
+                        <span class="pokeball"></span>
+                        <img src="img/Pidgeotto.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Pidgeotto.html">Pidgeotto</a>
+                        <button onclick="toggleFavorite('Pidgeotto')">☆</button>
+                    </li>
+                    <li data-type="normal flying">
+                        <span class="pokeball"></span>
+                        <img src="img/Pidgeot.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Pidgeot.html">Pidgeot</a>
+                        <button onclick="toggleFavorite('Pidgeot')">☆</button>
+                    </li>
+                    <li data-type="normal">
+                        <span class="pokeball"></span>
+                        <img src="img/Rattata.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Rattata.html">Rattata</a>
+                        <button onclick="toggleFavorite('Rattata')">☆</button>
+                    </li>
+                    <li data-type="normal">
+                        <span class="pokeball"></span>
+                        <img src="img/Raticate.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Raticate.html">Raticate</a>
+                        <button onclick="toggleFavorite('Raticate')">☆</button>
+                    </li>
+                    <li data-type="normal flying">
+                        <span class="pokeball"></span>
+                        <img src="img/Spearow.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Spearow.html">Spearow</a>
+                        <button onclick="toggleFavorite('Spearow')">☆</button>
+                    </li>
+                    <li data-type="normal flying">
+                        <span class="pokeball"></span>
+                        <img src="img/Fearow.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Fearow.html">Fearow</a>
+                        <button onclick="toggleFavorite('Fearow')">☆</button>
+                    </li>
+                    <li data-type="poison">
+                        <span class="pokeball"></span>
+                        <img src="img/Ekans.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Ekans.html">Ekans</a>
+                        <button onclick="toggleFavorite('Ekans')">☆</button>
+                    </li>
+                    <li data-type="poison">
+                        <span class="pokeball"></span>
+                        <img src="img/Arbok.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Arbok.html">Arbok</a>
+                        <button onclick="toggleFavorite('Arbok')">☆</button>
+                    </li>
+                    <li data-type="electric">
+                        <span class="pokeball"></span>
+                        <img src="img/Pikachu.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Pikachu.html">Pikachu</a>
+                        <button onclick="toggleFavorite('Pikachu')">☆</button>
+                    </li>
+                    <li data-type="electric">
+                        <span class="pokeball"></span>
+                        <img src="img/Raichu.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Raichu.html">Raichu</a>
+                        <button onclick="toggleFavorite('Raichu')">☆</button>
+                    </li>
+                    <li data-type="ground">
+                        <span class="pokeball"></span>
+                        <img src="img/Sandshrew.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Sandshrew.html">Sandshrew</a>
+                        <button onclick="toggleFavorite('Sandshrew')">☆</button>
+                    </li>
+                    <li data-type="ground">
+                        <span class="pokeball"></span>
+                        <img src="img/Sandslash.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Sandslash.html">Sandslash</a>
+                        <button onclick="toggleFavorite('Sandslash')">☆</button>
+                    </li>
+                    <li data-type="poison">
+                        <span class="pokeball"></span>
+                        <img src="img/nidoranf.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/NidoranF.html">Nidoran♀</a>
+                        <button onclick="toggleFavorite('Nidoran♀')">☆</button>
+                    </li>
+                    <li data-type="poison">
+                        <span class="pokeball"></span>
+                        <img src="img/Nidorina.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Nidorina.html">Nidorina</a>
+                        <button onclick="toggleFavorite('Nidorina')">☆</button>
+                    </li>
+                    <li data-type="poison ground">
+                        <span class="pokeball"></span>
+                        <img src="img/Nidoqueen.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Nidoqueen.html">Nidoqueen</a>
+                        <button onclick="toggleFavorite('Nidoqueen')">☆</button>
+                    </li>
+                    <li data-type="poison">
+                        <span class="pokeball"></span>
+                        <img src="img/nidoranm.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/NidoranM.html">Nidoran♂</a>
+                        <button onclick="toggleFavorite('Nidoran♂')">☆</button>
+                    </li>
+                    <li data-type="poison">
+                        <span class="pokeball"></span>
+                        <img src="img/Nidorino.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Nidorino.html">Nidorino</a>
+                        <button onclick="toggleFavorite('Nidorino')">☆</button>
+                    </li>
+                    <li data-type="poison ground">
+                        <span class="pokeball"></span>
+                        <img src="img/Nidoking.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Nidoking.html">Nidoking</a>
+                        <button onclick="toggleFavorite('Nidoking')">☆</button>
+                    </li>
+                    <li data-type="fairy">
+                        <span class="pokeball"></span>
+                        <img src="img/Clefairy.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Clefairy.html">Clefairy</a>
+                        <button onclick="toggleFavorite('Clefairy')">☆</button>
+                    </li>
+                    <li data-type="fairy">
+                        <span class="pokeball"></span>
+                        <img src="img/Clefable.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Clefable.html">Clefable</a>
+                        <button onclick="toggleFavorite('Clefable')">☆</button>
+                    </li>
+                    <li data-type="fire">
+                        <span class="pokeball"></span>
+                        <img src="img/Vulpix.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Vulpix.html">Vulpix</a>
+                        <button onclick="toggleFavorite('Vulpix')">☆</button>
+                    </li>
+                    <li data-type="fire">
+                        <span class="pokeball"></span>
+                        <img src="img/Ninetales.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Ninetales.html">Ninetales</a>
+                        <button onclick="toggleFavorite('Ninetales')">☆</button>
+                    </li>
+                    <li data-type="normal fairy">
+                        <span class="pokeball"></span>
+                        <img src="img/Jigglypuff.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Jigglypuff.html">Jigglypuff</a>
+                        <button onclick="toggleFavorite('Jigglypuff')">☆</button>
+                    </li>
+                    <li data-type="normal fairy">
+                        <span class="pokeball"></span>
+                        <img src="img/Wigglytuff.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Wigglytuff.html">Wigglytuff</a>
+                        <button onclick="toggleFavorite('Wigglytuff')">☆</button>
+                    </li>
+                    <li data-type="poison flying">
+                        <span class="pokeball"></span>
+                        <img src="img/Zubat.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Zubat.html">Zubat</a>
+                        <button onclick="toggleFavorite('Zubat')">☆</button>
+                    </li>
+                    <li data-type="poison flying">
+                        <span class="pokeball"></span>
+                        <img src="img/Golbat.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Golbat.html">Golbat</a>
+                        <button onclick="toggleFavorite(this,'Golbat')">☆</button>
+                    </li>
+                    <li data-type="grass poison">
 
-            <span class="pokeball"></span>
-            <img src="img/Oddish.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Oddish.html">Oddish</a>
-            <button onclick="toggleFavorite('Oddish')">☆</button>
-        </li>
-        <li data-type="grass poison">
-            <span class="pokeball"></span>
-            <img src="img/Gloom.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Gloom.html">Gloom</a>
-            <button onclick="toggleFavorite('Gloom')">☆</button>
-        </li>
-        <li data-type="grass poison">
-            <span class="pokeball"></span>
-            <img src="img/Vileplume.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Vileplume.html">Vileplume</a>
-            <button onclick="toggleFavorite('Vileplume')">☆</button>
-        </li>
-        <li data-type="bug grass">
-            <span class="pokeball"></span>
-            <img src="img/Paras.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Paras.html">Paras</a>
-            <button onclick="toggleFavorite('Paras')">☆</button>
-        </li>
-        <li data-type="bug grass">
-            <span class="pokeball"></span>
-            <img src="img/Parasect.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Parasect.html">Parasect</a>
-            <button onclick="toggleFavorite('Parasect')">☆</button>
-        </li>
-        <li data-type="bug poison">
-            <span class="pokeball"></span>
-            <img src="img/Venonat.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Venonat.html">Venonat</a>
-            <button onclick="toggleFavorite('Venonat')">☆</button>
-        </li>
-        <li data-type="bug poison">
-            <span class="pokeball"></span>
-            <img src="img/Venomoth.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Venomoth.html">Venomoth</a>
-            <button onclick="toggleFavorite('Venomoth')">☆</button>
-        </li>
-        <li data-type="ground">
-            <span class="pokeball"></span>
-            <img src="img/Diglett.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Diglett.html">Diglett</a>
-            <button onclick="toggleFavorite('Diglett')">☆</button>
-        </li>
-        <li data-type="ground">
-            <span class="pokeball"></span>
-            <img src="img/Dugtrio.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Dugtrio.html">Dugtrio</a>
-            <button onclick="toggleFavorite('Dugtrio')">☆</button>
-        </li>
-        <li data-type="normal">
-            <span class="pokeball"></span>
-            <img src="img/Meowth.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Meowth.html">Meowth</a>
-            <button onclick="toggleFavorite('Meowth')">☆</button>
-        </li>
-        <li data-type="normal">
-            <span class="pokeball"></span>
-            <img src="img/Persian.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Persian.html">Persian</a>
-            <button onclick="toggleFavorite('Persian')">☆</button>
-        </li>
-        <li data-type="water">
-            <span class="pokeball"></span>
-            <img src="img/Psyduck.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Psyduck.html">Psyduck</a>
-            <button onclick="toggleFavorite('Psyduck')">☆</button>
-        </li>
-        <li data-type="water">
-            <span class="pokeball"></span>
-            <img src="img/Golduck.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Golduck.html">Golduck</a>
-            <button onclick="toggleFavorite('Golduck')">☆</button>
-        </li>
-        <li data-type="fight">
-            <span class="pokeball"></span>
-            <img src="img/Mankey.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Mankey.html">Mankey</a>
-            <button onclick="toggleFavorite('Mankey')">☆</button>
-        </li>
-        <li data-type="fight">
-            <span class="pokeball"></span>
-            <img src="img/Primeape.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Primeape.html">Primeape</a>
-            <button onclick="toggleFavorite('Primeape')">☆</button>
-        </li>
-        <li data-type="fire">
-            <span class="pokeball"></span>
-            <img src="img/Growlithe.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Growlithe.html">Growlithe</a>
-            <button onclick="toggleFavorite('Growlithe')">☆</button>
-        </li>
-        <li data-type="fire">
-            <span class="pokeball"></span>
-            <img src="img/Arcanine.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Arcanine.html">Arcanine</a>
-            <button onclick="toggleFavorite('Arcanine')">☆</button>
-        </li>
-        <li data-type="water">
-            <span class="pokeball"></span>
-            <img src="img/Poliwag.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Poliwag.html">Poliwag</a>
-            <button onclick="toggleFavorite('Poliwag')">☆</button>
-        </li>
-        <li data-type="water">
-            <span class="pokeball"></span>
-            <img src="img/Poliwhirl.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Poliwhirl.html">Poliwhirl</a>
-            <button onclick="toggleFavorite('Poliwhirl')">☆</button>
-        </li>
-        <li data-type="water fight">
-            <span class="pokeball"></span>
-            <img src="img/Poliwrath.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Poliwrath.html">Poliwrath</a>
-            <button onclick="toggleFavorite('Poliwrath')">☆</button>
-        </li>
-        <li data-type="psychic">
-            <span class="pokeball"></span>
-            <img src="img/Abra.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Abra.html">Abra</a>
-            <button onclick="toggleFavorite('Abra')">☆</button>
-        </li>
-        <li data-type="psychic">
-            <span class="pokeball"></span>
-            <img src="img/Kadabra.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Kadabra.html">Kadabra</a>
-            <button onclick="toggleFavorite('Kadabra')">☆</button>
-        </li>
-        <li data-type="psychic">
-            <span class="pokeball"></span>
-            <img src="img/Alakazam.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Alakazam.html">Alakazam</a>
-            <button onclick="toggleFavorite('Alakazam')">☆</button>
-        </li>
-        <li data-type="fight">
-            <span class="pokeball"></span>
-            <img src="img/Machop.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Machop.html">Machop</a>
-            <button onclick="toggleFavorite('Machop')">☆</button>
-        </li>
-        <li data-type="fight">
-            <span class="pokeball"></span>
-            <img src="img/Machoke.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Machoke.html">Machoke</a>
-            <button onclick="toggleFavorite('Machoke')">☆</button>
-        </li>
-        <li data-type="fight">
-            <span class="pokeball"></span>
-            <img src="img/Machamp.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Machamp.html">Machamp</a>
-            <button onclick="toggleFavorite('Machamp')">☆</button>
-        </li>
-        <li data-type="grass poison">
-            <span class="pokeball"></span>
-            <img src="img/Bellsprout.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Bellsprout.html">Bellsprout</a>
-            <button onclick="toggleFavorite('Bellsprout')">☆</button>
-        </li>
-        <li data-type="grass poison">
-            <span class="pokeball"></span>
-            <img src="img/Weepinbell.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Weepinbell.html">Weepinbell</a>
-            <button onclick="toggleFavorite('Weepinbell')">☆</button>
-        </li>
-        <li data-type="grass poison">
-            <span class="pokeball"></span>
-            <img src="img/Victreebel.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Victreebel.html">Victreebel</a>
-            <button onclick="toggleFavorite('Victreebel')">☆</button>
-        </li>
-        <li data-type="water poison">
-            <span class="pokeball"></span>
-            <img src="img/Tentacool.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Tentacool.html">Tentacool</a>
-            <button onclick="toggleFavorite('Tentacool')">☆</button>
-        </li>
-        <li data-type="water poison">
-            <span class="pokeball"></span>
-            <img src="img/Tentacruel.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Tentacruel.html">Tentacruel</a>
-            <button onclick="toggleFavorite('Tentacruel')">☆</button>
-        </li>
-        <li data-type="rock ground">
-            <span class="pokeball"></span>
-            <img src="img/Geodude.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Geodude.html">Geodude</a>
-            <button onclick="toggleFavorite('Geodude')">☆</button>
-        </li>
-        <li data-type="rock ground">
-            <span class="pokeball"></span>
-            <img src="img/Graveler.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Graveler.html">Graveler</a>
-            <button onclick="toggleFavorite('Graveler')">☆</button>
-        </li>
-        <li data-type="rock ground">
-            <span class="pokeball"></span>
-            <img src="img/Golem.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Golem.html">Golem</a>
-            <button onclick="toggleFavorite('Golem')">☆</button>
-        </li>
-        <li data-type="fire">
-            <span class="pokeball"></span>
-            <img src="img/Ponyta.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Ponyta.html">Ponyta</a>
-            <button onclick="toggleFavorite('Ponyta')">☆</button>
-        </li>
-        <li data-type="fire">
-            <span class="pokeball"></span>
-            <img src="img/Rapidash.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Rapidash.html">Rapidash</a>
-            <button onclick="toggleFavorite('Rapidash')">☆</button>
-        </li>
-        <li data-type="water psychic">
-            <span class="pokeball"></span>
-            <img src="img/Slowpoke.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Slowpoke.html">Slowpoke</a>
-            <button onclick="toggleFavorite('Slowpoke')">☆</button>
-        </li>
-        <li data-type="water psychic">
-            <span class="pokeball"></span>
-            <img src="img/Slowbro.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Slowbro.html">Slowbro</a>
-            <button onclick="toggleFavorite('Slowbro')">☆</button>
-        </li>
-        <li data-type="electric steel">
-            <span class="pokeball"></span>
-            <img src="img/Magnemite.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Magnemite.html">Magnemite</a>
-            <button onclick="toggleFavorite('Magnemite')">☆</button>
-        </li>
-        <li data-type="electric steel">
-            <span class="pokeball"></span>
-            <img src="img/Magneton.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Magneton.html">Magneton</a>
-            <button onclick="toggleFavorite('Magneton')">☆</button>
-        </li>
-        <li data-type="normal flying">
-            <span class="pokeball"></span>
-            <img src="img/Farfetchd.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Farfetch'd.html">Farfetch'd</a>
-            <button onclick="toggleFavorite(this,'Farfetch\'d')">☆</button>
-        </li>
-        <li data-type="normal flying">
-            <span class="pokeball"></span>
-            <img src="img/Doduo.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Doduo.html">Doduo</a>
-                <button onclick="toggleFavorite('Doduo')">☆</button>
-        </li>
-        <li data-type="normal flying">
-            <span class="pokeball"></span>
-            <img src="img/Dodrio.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Dodrio.html">Dodrio</a>
-            <button onclick="toggleFavorite('Dodrio')">☆</button>
-        </li>
-        <li data-type="water">
-            <span class="pokeball"></span>
-            <img src="img/Seel.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Seel.html">Seel</a>
-            <button onclick="toggleFavorite('Seel')">☆</button>
-        </li>
-        <li data-type="water ice">
-            <span class="pokeball"></span>
-            <img src="img/Dewgong.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Dewgong.html">Dewgong</a>
-            <button onclick="toggleFavorite('Dewgong')">☆</button>
-        </li>
-        <li data-type="poison">
-            <span class="pokeball"></span>
-            <img src="img/Grimer.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Grimer.html">Grimer</a>
-            <button onclick="toggleFavorite('Grimer')">☆</button>
-        </li>
-        <li data-type="poison">
-            <span class="pokeball"></span>
-            <img src="img/Muk.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Muk.html">Muk</a>
-            <button onclick="toggleFavorite('Muk')">☆</button>
-        </li>
-        <li data-type="water">
-            <span class="pokeball"></span>
-            <img src="img/Shellder.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Shellder.html">Shellder</a>
-            <button onclick="toggleFavorite('Shellder')">☆</button>
-        </li>
-        <li data-type="water ice">
-            <span class="pokeball"></span>
-            <img src="img/Cloyster.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Cloyster.html">Cloyster</a>
-            <button onclick="toggleFavorite('Cloyster')">☆</button>
-        </li>
-        <li data-type="ghost poison">
-            <span class="pokeball"></span>
-            <img src="img/Gastly.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Gastly.html">Gastly</a>
-            <button onclick="toggleFavorite('Gastly')">☆</button>
-        </li>
-        <li data-type="ghost poison">
-            <span class="pokeball"></span>
-            <img src="img/Haunter.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Haunter.html">Haunter</a>
-            <button onclick="toggleFavorite('Haunter')">☆</button>
-        </li>
-        <li data-type="ghost poison">
-            <span class="pokeball"></span>
-            <img src="img/Gengar.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Gengar.html">Gengar</a>
-            <button onclick="toggleFavorite('Gengar')">☆</button>
-        </li>
-        <li data-type="rock ground">
-            <span class="pokeball"></span>
-            <img src="img/Onix.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Onix.html">Onix</a>
-            <button onclick="toggleFavorite('Onix')">☆</button>
-        </li>
-        <li data-type="psychic">
-            <span class="pokeball"></span>
-            <img src="img/Drowzee.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Drowzee.html">Drowzee</a>
-            <button onclick="toggleFavorite('Drowzee')">☆</button>
-        </li>
-        <li data-type="psychic">
-            <span class="pokeball"></span>
-            <img src="img/Hypno.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Hypno.html">Hypno</a>
-            <button onclick="toggleFavorite('Hypno')">☆</button>
-        </li>
-        <li data-type="water">
-            <span class="pokeball"></span>
-            <img src="img/Krabby.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Krabby.html">Krabby</a>
-            <button onclick="toggleFavorite('Krabby')">☆</button>
-        </li>
-        <li data-type="water">
-            <span class="pokeball"></span>
-            <img src="img/Kingler.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Kingler.html">Kingler</a>
-            <button onclick="toggleFavorite('Kingler')">☆</button>
-        </li>
-        
-        <li data-type="electric">
-            <span class="pokeball"></span>
-            <img src="img/Voltrob.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Voltrob.html">Voltrob</a>
-            <button onclick="toggleFavorite('Voltrob')">☆</button>
-        </li>
-        <li data-type="electric">
-            <span class="pokeball"></span>
-            <img src="img/Electrode.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Electrode.html">Electrode</a>
-            <button onclick="toggleFavorite('Electrode')">☆</button>
-        </li>
-        <li data-type="grass psychic">
-            <span class="pokeball"></span>
-            <img src="img/Exeggcute.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Exeggcute.html">Exeggcute</a>
-            <button onclick="toggleFavorite('Exeggcute')">☆</button>
-        </li>
-        <li data-type="grass psychic">
-            <span class="pokeball"></span>
-            <img src="img/Exeggutor.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Exeggutor.html">Exeggutor</a>
-            <button onclick="toggleFavorite('Exeggutor')">☆</button>
-        </li>
-        <li data-type="ground">
+                        <span class="pokeball"></span>
+                        <img src="img/Oddish.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Oddish.html">Oddish</a>
+                        <button onclick="toggleFavorite('Oddish')">☆</button>
+                    </li>
+                    <li data-type="grass poison">
+                        <span class="pokeball"></span>
+                        <img src="img/Gloom.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Gloom.html">Gloom</a>
+                        <button onclick="toggleFavorite('Gloom')">☆</button>
+                    </li>
+                    <li data-type="grass poison">
+                        <span class="pokeball"></span>
+                        <img src="img/Vileplume.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Vileplume.html">Vileplume</a>
+                        <button onclick="toggleFavorite('Vileplume')">☆</button>
+                    </li>
+                    <li data-type="bug grass">
+                        <span class="pokeball"></span>
+                        <img src="img/Paras.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Paras.html">Paras</a>
+                        <button onclick="toggleFavorite('Paras')">☆</button>
+                    </li>
+                    <li data-type="bug grass">
+                        <span class="pokeball"></span>
+                        <img src="img/Parasect.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Parasect.html">Parasect</a>
+                        <button onclick="toggleFavorite('Parasect')">☆</button>
+                    </li>
+                    <li data-type="bug poison">
+                        <span class="pokeball"></span>
+                        <img src="img/Venonat.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Venonat.html">Venonat</a>
+                        <button onclick="toggleFavorite('Venonat')">☆</button>
+                    </li>
+                    <li data-type="bug poison">
+                        <span class="pokeball"></span>
+                        <img src="img/Venomoth.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Venomoth.html">Venomoth</a>
+                        <button onclick="toggleFavorite('Venomoth')">☆</button>
+                    </li>
+                    <li data-type="ground">
+                        <span class="pokeball"></span>
+                        <img src="img/Diglett.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Diglett.html">Diglett</a>
+                        <button onclick="toggleFavorite('Diglett')">☆</button>
+                    </li>
+                    <li data-type="ground">
+                        <span class="pokeball"></span>
+                        <img src="img/Dugtrio.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Dugtrio.html">Dugtrio</a>
+                        <button onclick="toggleFavorite('Dugtrio')">☆</button>
+                    </li>
+                    <li data-type="normal">
+                        <span class="pokeball"></span>
+                        <img src="img/Meowth.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Meowth.html">Meowth</a>
+                        <button onclick="toggleFavorite('Meowth')">☆</button>
+                    </li>
+                    <li data-type="normal">
+                        <span class="pokeball"></span>
+                        <img src="img/Persian.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Persian.html">Persian</a>
+                        <button onclick="toggleFavorite('Persian')">☆</button>
+                    </li>
+                    <li data-type="water">
+                        <span class="pokeball"></span>
+                        <img src="img/Psyduck.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Psyduck.html">Psyduck</a>
+                        <button onclick="toggleFavorite('Psyduck')">☆</button>
+                    </li>
+                    <li data-type="water">
+                        <span class="pokeball"></span>
+                        <img src="img/Golduck.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Golduck.html">Golduck</a>
+                        <button onclick="toggleFavorite('Golduck')">☆</button>
+                    </li>
+                    <li data-type="fight">
+                        <span class="pokeball"></span>
+                        <img src="img/Mankey.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Mankey.html">Mankey</a>
+                        <button onclick="toggleFavorite('Mankey')">☆</button>
+                    </li>
+                    <li data-type="fight">
+                        <span class="pokeball"></span>
+                        <img src="img/Primeape.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Primeape.html">Primeape</a>
+                        <button onclick="toggleFavorite('Primeape')">☆</button>
+                    </li>
+                    <li data-type="fire">
+                        <span class="pokeball"></span>
+                        <img src="img/Growlithe.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Growlithe.html">Growlithe</a>
+                        <button onclick="toggleFavorite('Growlithe')">☆</button>
+                    </li>
+                    <li data-type="fire">
+                        <span class="pokeball"></span>
+                        <img src="img/Arcanine.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Arcanine.html">Arcanine</a>
+                        <button onclick="toggleFavorite('Arcanine')">☆</button>
+                    </li>
+                    <li data-type="water">
+                        <span class="pokeball"></span>
+                        <img src="img/Poliwag.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Poliwag.html">Poliwag</a>
+                        <button onclick="toggleFavorite('Poliwag')">☆</button>
+                    </li>
+                    <li data-type="water">
+                        <span class="pokeball"></span>
+                        <img src="img/Poliwhirl.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Poliwhirl.html">Poliwhirl</a>
+                        <button onclick="toggleFavorite('Poliwhirl')">☆</button>
+                    </li>
+                    <li data-type="water fight">
+                        <span class="pokeball"></span>
+                        <img src="img/Poliwrath.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Poliwrath.html">Poliwrath</a>
+                        <button onclick="toggleFavorite('Poliwrath')">☆</button>
+                    </li>
+                    <li data-type="psychic">
+                        <span class="pokeball"></span>
+                        <img src="img/Abra.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Abra.html">Abra</a>
+                        <button onclick="toggleFavorite('Abra')">☆</button>
+                    </li>
+                    <li data-type="psychic">
+                        <span class="pokeball"></span>
+                        <img src="img/Kadabra.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Kadabra.html">Kadabra</a>
+                        <button onclick="toggleFavorite('Kadabra')">☆</button>
+                    </li>
+                    <li data-type="psychic">
+                        <span class="pokeball"></span>
+                        <img src="img/Alakazam.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Alakazam.html">Alakazam</a>
+                        <button onclick="toggleFavorite('Alakazam')">☆</button>
+                    </li>
+                    <li data-type="fight">
+                        <span class="pokeball"></span>
+                        <img src="img/Machop.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Machop.html">Machop</a>
+                        <button onclick="toggleFavorite('Machop')">☆</button>
+                    </li>
+                    <li data-type="fight">
+                        <span class="pokeball"></span>
+                        <img src="img/Machoke.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Machoke.html">Machoke</a>
+                        <button onclick="toggleFavorite('Machoke')">☆</button>
+                    </li>
+                    <li data-type="fight">
+                        <span class="pokeball"></span>
+                        <img src="img/Machamp.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Machamp.html">Machamp</a>
+                        <button onclick="toggleFavorite('Machamp')">☆</button>
+                    </li>
+                    <li data-type="grass poison">
+                        <span class="pokeball"></span>
+                        <img src="img/Bellsprout.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Bellsprout.html">Bellsprout</a>
+                        <button onclick="toggleFavorite('Bellsprout')">☆</button>
+                    </li>
+                    <li data-type="grass poison">
+                        <span class="pokeball"></span>
+                        <img src="img/Weepinbell.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Weepinbell.html">Weepinbell</a>
+                        <button onclick="toggleFavorite('Weepinbell')">☆</button>
+                    </li>
+                    <li data-type="grass poison">
+                        <span class="pokeball"></span>
+                        <img src="img/Victreebel.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Victreebel.html">Victreebel</a>
+                        <button onclick="toggleFavorite('Victreebel')">☆</button>
+                    </li>
+                    <li data-type="water poison">
+                        <span class="pokeball"></span>
+                        <img src="img/Tentacool.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Tentacool.html">Tentacool</a>
+                        <button onclick="toggleFavorite('Tentacool')">☆</button>
+                    </li>
+                    <li data-type="water poison">
+                        <span class="pokeball"></span>
+                        <img src="img/Tentacruel.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Tentacruel.html">Tentacruel</a>
+                        <button onclick="toggleFavorite('Tentacruel')">☆</button>
+                    </li>
+                    <li data-type="rock ground">
+                        <span class="pokeball"></span>
+                        <img src="img/Geodude.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Geodude.html">Geodude</a>
+                        <button onclick="toggleFavorite('Geodude')">☆</button>
+                    </li>
+                    <li data-type="rock ground">
+                        <span class="pokeball"></span>
+                        <img src="img/Graveler.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Graveler.html">Graveler</a>
+                        <button onclick="toggleFavorite('Graveler')">☆</button>
+                    </li>
+                    <li data-type="rock ground">
+                        <span class="pokeball"></span>
+                        <img src="img/Golem.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Golem.html">Golem</a>
+                        <button onclick="toggleFavorite('Golem')">☆</button>
+                    </li>
+                    <li data-type="fire">
+                        <span class="pokeball"></span>
+                        <img src="img/Ponyta.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Ponyta.html">Ponyta</a>
+                        <button onclick="toggleFavorite('Ponyta')">☆</button>
+                    </li>
+                    <li data-type="fire">
+                        <span class="pokeball"></span>
+                        <img src="img/Rapidash.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Rapidash.html">Rapidash</a>
+                        <button onclick="toggleFavorite('Rapidash')">☆</button>
+                    </li>
+                    <li data-type="water psychic">
+                        <span class="pokeball"></span>
+                        <img src="img/Slowpoke.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Slowpoke.html">Slowpoke</a>
+                        <button onclick="toggleFavorite('Slowpoke')">☆</button>
+                    </li>
+                    <li data-type="water psychic">
+                        <span class="pokeball"></span>
+                        <img src="img/Slowbro.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Slowbro.html">Slowbro</a>
+                        <button onclick="toggleFavorite('Slowbro')">☆</button>
+                    </li>
+                    <li data-type="electric steel">
+                        <span class="pokeball"></span>
+                        <img src="img/Magnemite.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Magnemite.html">Magnemite</a>
+                        <button onclick="toggleFavorite('Magnemite')">☆</button>
+                    </li>
+                    <li data-type="electric steel">
+                        <span class="pokeball"></span>
+                        <img src="img/Magneton.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Magneton.html">Magneton</a>
+                        <button onclick="toggleFavorite('Magneton')">☆</button>
+                    </li>
+                    <li data-type="normal flying">
+                        <span class="pokeball"></span>
+                        <img src="img/Farfetchd.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Farfetch'd.html">Farfetch'd</a>
+                        <button onclick="toggleFavorite(this,'Farfetch\'d')">☆</button>
+                    </li>
+                    <li data-type="normal flying">
+                        <span class="pokeball"></span>
+                        <img src="img/Doduo.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Doduo.html">Doduo</a>
+                        <button onclick="toggleFavorite('Doduo')">☆</button>
+                    </li>
+                    <li data-type="normal flying">
+                        <span class="pokeball"></span>
+                        <img src="img/Dodrio.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Dodrio.html">Dodrio</a>
+                        <button onclick="toggleFavorite('Dodrio')">☆</button>
+                    </li>
+                    <li data-type="water">
+                        <span class="pokeball"></span>
+                        <img src="img/Seel.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Seel.html">Seel</a>
+                        <button onclick="toggleFavorite('Seel')">☆</button>
+                    </li>
+                    <li data-type="water ice">
+                        <span class="pokeball"></span>
+                        <img src="img/Dewgong.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Dewgong.html">Dewgong</a>
+                        <button onclick="toggleFavorite('Dewgong')">☆</button>
+                    </li>
+                    <li data-type="poison">
+                        <span class="pokeball"></span>
+                        <img src="img/Grimer.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Grimer.html">Grimer</a>
+                        <button onclick="toggleFavorite('Grimer')">☆</button>
+                    </li>
+                    <li data-type="poison">
+                        <span class="pokeball"></span>
+                        <img src="img/Muk.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Muk.html">Muk</a>
+                        <button onclick="toggleFavorite('Muk')">☆</button>
+                    </li>
+                    <li data-type="water">
+                        <span class="pokeball"></span>
+                        <img src="img/Shellder.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Shellder.html">Shellder</a>
+                        <button onclick="toggleFavorite('Shellder')">☆</button>
+                    </li>
+                    <li data-type="water ice">
+                        <span class="pokeball"></span>
+                        <img src="img/Cloyster.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Cloyster.html">Cloyster</a>
+                        <button onclick="toggleFavorite('Cloyster')">☆</button>
+                    </li>
+                    <li data-type="ghost poison">
+                        <span class="pokeball"></span>
+                        <img src="img/Gastly.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Gastly.html">Gastly</a>
+                        <button onclick="toggleFavorite('Gastly')">☆</button>
+                    </li>
+                    <li data-type="ghost poison">
+                        <span class="pokeball"></span>
+                        <img src="img/Haunter.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Haunter.html">Haunter</a>
+                        <button onclick="toggleFavorite('Haunter')">☆</button>
+                    </li>
+                    <li data-type="ghost poison">
+                        <span class="pokeball"></span>
+                        <img src="img/Gengar.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Gengar.html">Gengar</a>
+                        <button onclick="toggleFavorite('Gengar')">☆</button>
+                    </li>
+                    <li data-type="rock ground">
+                        <span class="pokeball"></span>
+                        <img src="img/Onix.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Onix.html">Onix</a>
+                        <button onclick="toggleFavorite('Onix')">☆</button>
+                    </li>
+                    <li data-type="psychic">
+                        <span class="pokeball"></span>
+                        <img src="img/Drowzee.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Drowzee.html">Drowzee</a>
+                        <button onclick="toggleFavorite('Drowzee')">☆</button>
+                    </li>
+                    <li data-type="psychic">
+                        <span class="pokeball"></span>
+                        <img src="img/Hypno.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Hypno.html">Hypno</a>
+                        <button onclick="toggleFavorite('Hypno')">☆</button>
+                    </li>
+                    <li data-type="water">
+                        <span class="pokeball"></span>
+                        <img src="img/Krabby.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Krabby.html">Krabby</a>
+                        <button onclick="toggleFavorite('Krabby')">☆</button>
+                    </li>
+                    <li data-type="water">
+                        <span class="pokeball"></span>
+                        <img src="img/Kingler.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Kingler.html">Kingler</a>
+                        <button onclick="toggleFavorite('Kingler')">☆</button>
+                    </li>
 
-            <span class="pokeball"></span>
-            <img src="img/Cubone.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Cubone.html">Cubone</a>
-            <button onclick="toggleFavorite('Cubone')">☆</button>
-        </li>
-        <li data-type="ground">
-            <span class="pokeball"></span>
-            <img src="img/Marowak.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Marowak.html">Marowak</a>
-            <button onclick="toggleFavorite(this,'Marowak')">☆</button>
-        </li>
-        <li data-type="fight">
-            <span class="pokeball"></span>
-            <img src="img/Hitmonlee.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Hitmonlee.html">Hitmonlee</a>
-            <button onclick="toggleFavorite(this,'Hitmonlee')">☆</button>
-        </li>
-        <li data-type="fight">
-            <span class="pokeball"></span>
-            <img src="img/Hitmonchan.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Hitmonchan.html">Hitmonchan</a>
-            <button onclick="toggleFavorite('Hitmonchan')">☆</button>
-        </li>
-        <li data-type="normal">
-            <span class="pokeball"></span>
-            <img src="img/Lickitung.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Lickitung.html">Lickitung</a>
-            <button onclick="toggleFavorite('Lickitung')">☆</button>
-        </li>
-        <li data-type="poison">
-            <span class="pokeball"></span>
-            <img src="img/Koffing.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Koffing.html">Koffing</a>
-            <button onclick="toggleFavorite('Koffing')">☆</button>
-        </li>
-        <li data-type="poison">
-            <span class="pokeball"></span>
-            <img src="img/Weezing.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Weezing.html">Weezing</a>
-            <button onclick="toggleFavorite('Weezing')">☆</button>
-        </li>
-        <li data-type="ground rock">
-            <span class="pokeball"></span>
-            <img src="img/Rhyhorn.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Rhyhorn.html">Rhyhorn</a>
-            <button onclick="toggleFavorite('Rhyhorn')">☆</button>
-        </li>
-        <li data-type="ground rock">
-            <span class="pokeball"></span>
-            <img src="img/Rhydon.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Rhydon.html">Rhydon</a>
-            <button onclick="toggleFavorite('Rhydon')">☆</button>
-        </li>
-        <li data-type="normal">
-            <span class="pokeball"></span>
-            <img src="img/Chansey.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Chansey.html">Chansey</a>
-            <button onclick="toggleFavorite('Chansey')">☆</button>
-        </li>
-        <li data-type="grass">
-            <span class="pokeball"></span>
-            <img src="img/Tangela.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Tangela.html">Tangela</a>
-            <button onclick="toggleFavorite('Tangela')">☆</button>
-        </li>
-        <li data-type="normal">
-            <span class="pokeball"></span>
-            <img src="img/Kangaskhan.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Kangaskhan.html">Kangaskhan</a>
-            <button onclick="toggleFavorite('Kangaskhan')">☆</button>
-        </li>
-        <li data-type="water">
-            <span class="pokeball"></span>
-            <img src="img/Horsea.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Horsea.html">Horsea</a>
-            <button onclick="toggleFavorite('Horsea')">☆</button>
-        </li>
-        <li data-type="water">
-            <span class="pokeball"></span>
-            <img src="img/Seadra.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Seadra.html">Seadra</a>
-            <button onclick="toggleFavorite('Seadra')">☆</button>
-        </li>
-        <li data-type="water">
-            <span class="pokeball"></span>
-            <img src="img/Goldeen.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Goldeen.html">Goldeen</a>
-            <button onclick="toggleFavorite('Goldeen')">☆</button>
-        </li>
-        <li data-type="water">
-            <span class="pokeball"></span>
-            <img src="img/Seaking.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Seaking.html">Seaking</a>
-            <button onclick="toggleFavorite('Seaking')">☆</button>
-        </li>
-        <li data-type="water">
-            <span class="pokeball"></span>
-            <img src="img/Staryu.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Staryu.html">Staryu</a>
-            <button onclick="toggleFavorite('Staryu')">☆</button>
-        </li>
-        <li data-type="water psychic">
-            <span class="pokeball"></span>
-            <img src="img/Starmie.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Starmie.html">Starmie</a>
-            <button onclick="toggleFavorite('Starmie')">☆</button>
-        </li>
-        <li data-type="psychic fairy">
-            <span class="pokeball"></span>
-            <img src="img/mrmime.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Mr.Mime.html">Mr.Mime</a>
-            <button onclick="toggleFavorite('Mr.Mime')">☆</button>
-        </li>
-        <li data-type="bug flying">
-            <span class="pokeball"></span>
-            <img src="img/Scyther.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Scyther.html">Scyther</a>
-            <button onclick="toggleFavorite('Scyther')">☆</button>
-        </li>
-        <li data-type="ice psychic">
-            <span class="pokeball"></span>
-            <img src="img/Jynx.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Jynx.html">Jynx</a>
-            <button onclick="toggleFavorite('Jynx')">☆</button>
-        </li>
-        <li data-type="electric">
-            <span class="pokeball"></span>
-            <img src="img/Electabuzz.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Electabuzz.html">Electabuzz</a>
-            <button onclick="toggleFavorite(this,'Electabuzz')">☆</button>
-        </li>
-        <li data-type="fire">
-            <span class="pokeball"></span>
-            <img src="img/Magmar.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Magmar.html">Magmar</a>
-            <button onclick="toggleFavorite('Magmar')">☆</button>
-        </li>
-        <li data-type="bug">
-            <span class="pokeball"></span>
-            <img src="img/Pinsir.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Pinsir.html">Pinsir</a>
-            <button onclick="toggleFavorite('Pinsir')">☆</button>
-        </li>
-        <li data-type="normal">
-            <span class="pokeball"></span>
-            <img src="img/Tauros.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Tauros.html">Tauros</a>
-            <button onclick="toggleFavorite('Tauros')">☆</button>
-        </li>
-        <li data-type="water">
-            <span class="pokeball"></span>
-            <img src="img/Magikarp.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Magikarp.html">Magikarp</a>
-            <button onclick="toggleFavorite('Magikarp')">☆</button>
-        </li>
-        <li data-type="water flying">
-            <span class="pokeball"></span>
-            <img src="img/Gyarados.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Gyarados.html">Gyarados</a>
-            <button onclick="toggleFavorite('Gyarados')">☆</button>
-        </li>
-        <li data-type="water ice">
-            <span class="pokeball"></span>
-            <img src="img/Lapras.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Lapras.html">Lapras</a>
-            <button onclick="toggleFavorite('Lapras')">☆</button>
-        </li>
-        <li data-type="normal">
-            <span class="pokeball"></span>
-            <img src="img/Ditto.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Ditto.html">Ditto</a>
-            <button onclick="toggleFavorite('Ditto')">☆</button>
-        </li>
-        <li data-type="normal">
-            <span class="pokeball"></span>
-            <img src="img/Eevee.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Eevee.html">Eevee</a>
-            <button onclick="toggleFavorite('Eevee')">☆</button>
-        </li>
-        <li data-type="water">
-            <span class="pokeball"></span>
-            <img src="img/Vaporeon.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Vaporeon.html">Vaporeon</a>
-            <button onclick="toggleFavorite('Vaporeon')">☆</button>
-        </li>
-        <li data-type="electric">
-            <span class="pokeball"></span>
-            <img src="img/Jolteon.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Jolteon.html">Jolteon</a>
-            <button onclick="toggleFavorite('Jolteon')">☆</button>
-        </li>
-        <li data-type="fire">
-            <span class="pokeball"></span>
-            <img src="img/Flareon.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Flareon.html">Flareon</a>
-            <button onclick="toggleFavorite('Flareon')">☆</button>
-        </li>
-        <li data-type="normal">
-            <span class="pokeball"></span>
-            <img src="img/Porygon.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Porygon.html">Porygon</a>
-            <button onclick="toggleFavorite('Porygon')">☆</button>
-        </li>
-        <li data-type="rock water">
-            <span class="pokeball"></span>
-            <img src="img/Omanyte.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Omanyte.html">Omanyte</a>
-            <button onclick="toggleFavorite('Omanyte')">☆</button>
-        </li>
-        <li data-type="rock water">
-            <span class="pokeball"></span>
-            <img src="img/Omastar.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Omastar.html">Omastar</a>
-            <button onclick="toggleFavorite('Omastar')">☆</button>
-        </li>
-        <li data-type="rock water">
-            <span class="pokeball"></span>
-            <img src="img/Kabuto.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Kabuto.html">Kabuto</a>
-            <button onclick="toggleFavorite('Kabuto')">☆</button>
-        </li>
-        <li data-type="rock water">
-            <span class="pokeball"></span>
-            <img src="img/Kabutops.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Kabutops.html">Kabutops</a>
-            <button onclick="toggleFavorite('Kabutops')">☆</button>
-        </li>
-        <li data-type="rock flying">
-            <span class="pokeball"></span>
-            <img src="img/Aerodactyl.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Aerodactyl.html">Aerodactyl</a>
-            <button onclick="toggleFavorite('Aerodactyl')">☆</button>
-        </li>
-        <li data-type="normal">
-            <span class="pokeball"></span>
-            <img src="img/Snorlax.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Snorlax.html">Snorlax</a>
-            <button onclick="toggleFavorite('Snorlax')">☆</button>
-        </li>
-        <li data-type="ice flying">
-            <span class="pokeball"></span>
-            <img src="img/Articuno.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Articuno.html">Articuno</a>
-            <button onclick="toggleFavorite('Articuno')">☆</button>
-        </li>
-        <li data-type="electric flying">
-            <span class="pokeball"></span>
-            <img src="img/Zapdos.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Zapdos.html">Zapdos</a>
-            <button onclick="toggleFavorite('Zapdos')">☆</button>
-        </li>
-        <li data-type="fire flying">
-            <span class="pokeball"></span>
-            <img src="img/Moltres.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Moltres.html">Moltres</a>
-            <button onclick="toggleFavorite('Moltres')">☆</button>
-        </li>
-        <li data-type="dragon">
-            <span class="pokeball"></span>
-            <img src="img/Dratini.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Dratini.html">Dratini</a>
-            <button onclick="toggleFavorite('Dratini')">☆</button>
-        </li>
-        <li data-type="dragon">
-            <span class="pokeball"></span>
-            <img src="img/Dragonair.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Dragonair.html">Dragonair</a>
-            <button onclick="toggleFavorite('Dragonair')">☆</button>
-        </li>
-        <li data-type="dragon flying">
-            <span class="pokeball"></span>
-            <img src="img/Dragonite.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Dragonite.html">Dragonite</a>
-            <button onclick="toggleFavorite('Dragonite')">☆</button>
-        </li>
-        <li data-type="psychic">
-            <span class="pokeball"></span>
-            <img src="img/Mewtwo.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Mewtwo.html">Mewtwo</a>
-            <button onclick="toggleFavorite('Mewtwo')">☆</button>
-        </li>
-        <li data-type="psychic">
-            <span class="pokeball"></span>
-            <img src="img/Mew.gif" class="pokeImg">
-            <a href="Pokemony/Gen1/Mew.html">Mew</a>
-            <button onclick="toggleFavorite('Mew')">☆</button>
-        </li>
-    </ol>
+                    <li data-type="electric">
+                        <span class="pokeball"></span>
+                        <img src="img/Voltrob.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Voltrob.html">Voltrob</a>
+                        <button onclick="toggleFavorite('Voltrob')">☆</button>
+                    </li>
+                    <li data-type="electric">
+                        <span class="pokeball"></span>
+                        <img src="img/Electrode.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Electrode.html">Electrode</a>
+                        <button onclick="toggleFavorite('Electrode')">☆</button>
+                    </li>
+                    <li data-type="grass psychic">
+                        <span class="pokeball"></span>
+                        <img src="img/Exeggcute.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Exeggcute.html">Exeggcute</a>
+                        <button onclick="toggleFavorite('Exeggcute')">☆</button>
+                    </li>
+                    <li data-type="grass psychic">
+                        <span class="pokeball"></span>
+                        <img src="img/Exeggutor.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Exeggutor.html">Exeggutor</a>
+                        <button onclick="toggleFavorite('Exeggutor')">☆</button>
+                    </li>
+                    <li data-type="ground">
 
-    </div>
+                        <span class="pokeball"></span>
+                        <img src="img/Cubone.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Cubone.html">Cubone</a>
+                        <button onclick="toggleFavorite('Cubone')">☆</button>
+                    </li>
+                    <li data-type="ground">
+                        <span class="pokeball"></span>
+                        <img src="img/Marowak.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Marowak.html">Marowak</a>
+                        <button onclick="toggleFavorite(this,'Marowak')">☆</button>
+                    </li>
+                    <li data-type="fight">
+                        <span class="pokeball"></span>
+                        <img src="img/Hitmonlee.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Hitmonlee.html">Hitmonlee</a>
+                        <button onclick="toggleFavorite(this,'Hitmonlee')">☆</button>
+                    </li>
+                    <li data-type="fight">
+                        <span class="pokeball"></span>
+                        <img src="img/Hitmonchan.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Hitmonchan.html">Hitmonchan</a>
+                        <button onclick="toggleFavorite('Hitmonchan')">☆</button>
+                    </li>
+                    <li data-type="normal">
+                        <span class="pokeball"></span>
+                        <img src="img/Lickitung.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Lickitung.html">Lickitung</a>
+                        <button onclick="toggleFavorite('Lickitung')">☆</button>
+                    </li>
+                    <li data-type="poison">
+                        <span class="pokeball"></span>
+                        <img src="img/Koffing.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Koffing.html">Koffing</a>
+                        <button onclick="toggleFavorite('Koffing')">☆</button>
+                    </li>
+                    <li data-type="poison">
+                        <span class="pokeball"></span>
+                        <img src="img/Weezing.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Weezing.html">Weezing</a>
+                        <button onclick="toggleFavorite('Weezing')">☆</button>
+                    </li>
+                    <li data-type="ground rock">
+                        <span class="pokeball"></span>
+                        <img src="img/Rhyhorn.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Rhyhorn.html">Rhyhorn</a>
+                        <button onclick="toggleFavorite('Rhyhorn')">☆</button>
+                    </li>
+                    <li data-type="ground rock">
+                        <span class="pokeball"></span>
+                        <img src="img/Rhydon.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Rhydon.html">Rhydon</a>
+                        <button onclick="toggleFavorite('Rhydon')">☆</button>
+                    </li>
+                    <li data-type="normal">
+                        <span class="pokeball"></span>
+                        <img src="img/Chansey.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Chansey.html">Chansey</a>
+                        <button onclick="toggleFavorite('Chansey')">☆</button>
+                    </li>
+                    <li data-type="grass">
+                        <span class="pokeball"></span>
+                        <img src="img/Tangela.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Tangela.html">Tangela</a>
+                        <button onclick="toggleFavorite('Tangela')">☆</button>
+                    </li>
+                    <li data-type="normal">
+                        <span class="pokeball"></span>
+                        <img src="img/Kangaskhan.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Kangaskhan.html">Kangaskhan</a>
+                        <button onclick="toggleFavorite('Kangaskhan')">☆</button>
+                    </li>
+                    <li data-type="water">
+                        <span class="pokeball"></span>
+                        <img src="img/Horsea.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Horsea.html">Horsea</a>
+                        <button onclick="toggleFavorite('Horsea')">☆</button>
+                    </li>
+                    <li data-type="water">
+                        <span class="pokeball"></span>
+                        <img src="img/Seadra.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Seadra.html">Seadra</a>
+                        <button onclick="toggleFavorite('Seadra')">☆</button>
+                    </li>
+                    <li data-type="water">
+                        <span class="pokeball"></span>
+                        <img src="img/Goldeen.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Goldeen.html">Goldeen</a>
+                        <button onclick="toggleFavorite('Goldeen')">☆</button>
+                    </li>
+                    <li data-type="water">
+                        <span class="pokeball"></span>
+                        <img src="img/Seaking.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Seaking.html">Seaking</a>
+                        <button onclick="toggleFavorite('Seaking')">☆</button>
+                    </li>
+                    <li data-type="water">
+                        <span class="pokeball"></span>
+                        <img src="img/Staryu.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Staryu.html">Staryu</a>
+                        <button onclick="toggleFavorite('Staryu')">☆</button>
+                    </li>
+                    <li data-type="water psychic">
+                        <span class="pokeball"></span>
+                        <img src="img/Starmie.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Starmie.html">Starmie</a>
+                        <button onclick="toggleFavorite('Starmie')">☆</button>
+                    </li>
+                    <li data-type="psychic fairy">
+                        <span class="pokeball"></span>
+                        <img src="img/mrmime.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Mr.Mime.html">Mr.Mime</a>
+                        <button onclick="toggleFavorite('Mr.Mime')">☆</button>
+                    </li>
+                    <li data-type="bug flying">
+                        <span class="pokeball"></span>
+                        <img src="img/Scyther.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Scyther.html">Scyther</a>
+                        <button onclick="toggleFavorite('Scyther')">☆</button>
+                    </li>
+                    <li data-type="ice psychic">
+                        <span class="pokeball"></span>
+                        <img src="img/Jynx.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Jynx.html">Jynx</a>
+                        <button onclick="toggleFavorite('Jynx')">☆</button>
+                    </li>
+                    <li data-type="electric">
+                        <span class="pokeball"></span>
+                        <img src="img/Electabuzz.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Electabuzz.html">Electabuzz</a>
+                        <button onclick="toggleFavorite(this,'Electabuzz')">☆</button>
+                    </li>
+                    <li data-type="fire">
+                        <span class="pokeball"></span>
+                        <img src="img/Magmar.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Magmar.html">Magmar</a>
+                        <button onclick="toggleFavorite('Magmar')">☆</button>
+                    </li>
+                    <li data-type="bug">
+                        <span class="pokeball"></span>
+                        <img src="img/Pinsir.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Pinsir.html">Pinsir</a>
+                        <button onclick="toggleFavorite('Pinsir')">☆</button>
+                    </li>
+                    <li data-type="normal">
+                        <span class="pokeball"></span>
+                        <img src="img/Tauros.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Tauros.html">Tauros</a>
+                        <button onclick="toggleFavorite('Tauros')">☆</button>
+                    </li>
+                    <li data-type="water">
+                        <span class="pokeball"></span>
+                        <img src="img/Magikarp.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Magikarp.html">Magikarp</a>
+                        <button onclick="toggleFavorite('Magikarp')">☆</button>
+                    </li>
+                    <li data-type="water flying">
+                        <span class="pokeball"></span>
+                        <img src="img/Gyarados.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Gyarados.html">Gyarados</a>
+                        <button onclick="toggleFavorite('Gyarados')">☆</button>
+                    </li>
+                    <li data-type="water ice">
+                        <span class="pokeball"></span>
+                        <img src="img/Lapras.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Lapras.html">Lapras</a>
+                        <button onclick="toggleFavorite('Lapras')">☆</button>
+                    </li>
+                    <li data-type="normal">
+                        <span class="pokeball"></span>
+                        <img src="img/Ditto.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Ditto.html">Ditto</a>
+                        <button onclick="toggleFavorite('Ditto')">☆</button>
+                    </li>
+                    <li data-type="normal">
+                        <span class="pokeball"></span>
+                        <img src="img/Eevee.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Eevee.html">Eevee</a>
+                        <button onclick="toggleFavorite('Eevee')">☆</button>
+                    </li>
+                    <li data-type="water">
+                        <span class="pokeball"></span>
+                        <img src="img/Vaporeon.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Vaporeon.html">Vaporeon</a>
+                        <button onclick="toggleFavorite('Vaporeon')">☆</button>
+                    </li>
+                    <li data-type="electric">
+                        <span class="pokeball"></span>
+                        <img src="img/Jolteon.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Jolteon.html">Jolteon</a>
+                        <button onclick="toggleFavorite('Jolteon')">☆</button>
+                    </li>
+                    <li data-type="fire">
+                        <span class="pokeball"></span>
+                        <img src="img/Flareon.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Flareon.html">Flareon</a>
+                        <button onclick="toggleFavorite('Flareon')">☆</button>
+                    </li>
+                    <li data-type="normal">
+                        <span class="pokeball"></span>
+                        <img src="img/Porygon.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Porygon.html">Porygon</a>
+                        <button onclick="toggleFavorite('Porygon')">☆</button>
+                    </li>
+                    <li data-type="rock water">
+                        <span class="pokeball"></span>
+                        <img src="img/Omanyte.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Omanyte.html">Omanyte</a>
+                        <button onclick="toggleFavorite('Omanyte')">☆</button>
+                    </li>
+                    <li data-type="rock water">
+                        <span class="pokeball"></span>
+                        <img src="img/Omastar.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Omastar.html">Omastar</a>
+                        <button onclick="toggleFavorite('Omastar')">☆</button>
+                    </li>
+                    <li data-type="rock water">
+                        <span class="pokeball"></span>
+                        <img src="img/Kabuto.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Kabuto.html">Kabuto</a>
+                        <button onclick="toggleFavorite('Kabuto')">☆</button>
+                    </li>
+                    <li data-type="rock water">
+                        <span class="pokeball"></span>
+                        <img src="img/Kabutops.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Kabutops.html">Kabutops</a>
+                        <button onclick="toggleFavorite('Kabutops')">☆</button>
+                    </li>
+                    <li data-type="rock flying">
+                        <span class="pokeball"></span>
+                        <img src="img/Aerodactyl.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Aerodactyl.html">Aerodactyl</a>
+                        <button onclick="toggleFavorite('Aerodactyl')">☆</button>
+                    </li>
+                    <li data-type="normal">
+                        <span class="pokeball"></span>
+                        <img src="img/Snorlax.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Snorlax.html">Snorlax</a>
+                        <button onclick="toggleFavorite('Snorlax')">☆</button>
+                    </li>
+                    <li data-type="ice flying">
+                        <span class="pokeball"></span>
+                        <img src="img/Articuno.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Articuno.html">Articuno</a>
+                        <button onclick="toggleFavorite('Articuno')">☆</button>
+                    </li>
+                    <li data-type="electric flying">
+                        <span class="pokeball"></span>
+                        <img src="img/Zapdos.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Zapdos.html">Zapdos</a>
+                        <button onclick="toggleFavorite('Zapdos')">☆</button>
+                    </li>
+                    <li data-type="fire flying">
+                        <span class="pokeball"></span>
+                        <img src="img/Moltres.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Moltres.html">Moltres</a>
+                        <button onclick="toggleFavorite('Moltres')">☆</button>
+                    </li>
+                    <li data-type="dragon">
+                        <span class="pokeball"></span>
+                        <img src="img/Dratini.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Dratini.html">Dratini</a>
+                        <button onclick="toggleFavorite('Dratini')">☆</button>
+                    </li>
+                    <li data-type="dragon">
+                        <span class="pokeball"></span>
+                        <img src="img/Dragonair.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Dragonair.html">Dragonair</a>
+                        <button onclick="toggleFavorite('Dragonair')">☆</button>
+                    </li>
+                    <li data-type="dragon flying">
+                        <span class="pokeball"></span>
+                        <img src="img/Dragonite.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Dragonite.html">Dragonite</a>
+                        <button onclick="toggleFavorite('Dragonite')">☆</button>
+                    </li>
+                    <li data-type="psychic">
+                        <span class="pokeball"></span>
+                        <img src="img/Mewtwo.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Mewtwo.html">Mewtwo</a>
+                        <button onclick="toggleFavorite('Mewtwo')">☆</button>
+                    </li>
+                    <li data-type="psychic">
+                        <span class="pokeball"></span>
+                        <img src="img/Mew.gif" class="pokeImg">
+                        <a href="Pokemony/Gen1/Mew.html">Mew</a>
+                        <button onclick="toggleFavorite('Mew')">☆</button>
+                    </li>
+                </ol>
 
-<!-- Gen 2 Pokémon List -->
-    <div class="gen-list" id="gen2">
-    <ol class="pokedex">
+            </div>
 
-    </ol>
+            <!-- Gen 2 Pokémon List -->
+            <div class="gen-list" id="gen2">
+                <ol class="pokedex">
 
-</div>
-<!-- Gen 3 Pokémon List -->
-   <div class="gen-list" id="gen3">
-    <ol class="pokedex">
+                    <ul class="pokemon-list" id="gen2">
 
-    </ol>
+                        <li data-type="grass">
 
-</div>
-<!-- Gen 4 Pokémon List -->
-   <div class="gen-list" id="gen4">
-    <ol class="pokedex">
+                            <span class="pokeball"></span>
 
-    </ol>
+                            <img src="img/Chikorita.gif" class="pokeImg">
 
-</div>
-<!-- Gen 5 Pokémon List -->
-   <div class="gen-list" id="gen5">
-    <ol class="pokedex">
+                            <a href="Pokemony/Gen2/Chikorita.html">Chikorita</a>
 
-    </ol>
+                            <button onclick="toggleFavorite('Chikorita')">☆</button>
 
-</div>
-<!-- Gen 6 Pokémon List -->
-   <div class="gen-list" id="gen6">
-    <ol class="pokedex">
+                        </li>
 
-    </ol>
+                        <li data-type="grass">
 
-</div>
-<!-- Gen 7 Pokémon List -->
-   <div class="gen-list" id="gen7">
-    <ol class="pokedex">
+                            <span class="pokeball"></span>
 
-    </ol>
+                            <img src="img/Bayleef.gif" class="pokeImg">
 
-</div>
-<!-- Gen 8 Pokémon List -->
-   <div class="gen-list" id="gen8">
-    <ol class="pokedex">
+                            <a href="Pokemony/Gen2/Bayleef.html">Bayleef</a>
 
-    </ol>
+                            <button onclick="toggleFavorite('Bayleef')">☆</button>
 
-</div>
-<!-- Gen 9 Pokémon List -->
-   <div class="gen-list" id="gen9">
-    <ol class="pokedex">
+                        </li>
 
-    </ol>
+                        <li data-type="grass">
 
-</div>
+                            <span class="pokeball"></span>
 
-    </div>
+                            <img src="img/Meganium.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Meganium.html">Meganium</a>
+
+                            <button onclick="toggleFavorite('Meganium')">☆</button>
+
+                        </li>
+
+                        <li data-type="fire">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Cyndaquil.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Cyndaquil.html">Cyndaquil</a>
+
+                            <button onclick="toggleFavorite('Cyndaquil')">☆</button>
+
+                        </li>
+
+                        <li data-type="fire">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Quilava.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Quilava.html">Quilava</a>
+
+                            <button onclick="toggleFavorite('Quilava')">☆</button>
+
+                        </li>
+
+                        <li data-type="fire">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Typhlosion.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Typhlosion.html">Typhlosion</a>
+
+                            <button onclick="toggleFavorite('Typhlosion')">☆</button>
+
+                        </li>
+
+                        <li data-type="water">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Totodile.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Totodile.html">Totodile</a>
+
+                            <button onclick="toggleFavorite('Totodile')">☆</button>
+
+                        </li>
+
+                        <li data-type="water">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Croconaw.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Croconaw.html">Croconaw</a>
+
+                            <button onclick="toggleFavorite('Croconaw')">☆</button>
+
+                        </li>
+
+                        <li data-type="water">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Feraligatr.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Feraligatr.html">Feraligatr</a>
+
+                            <button onclick="toggleFavorite('Feraligatr')">☆</button>
+
+                        </li>
+
+                        <li data-type="normal">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Sentret.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Sentret.html">Sentret</a>
+
+                            <button onclick="toggleFavorite('Sentret')">☆</button>
+
+                        </li>
+
+                        <li data-type="normal">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Furret.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Furret.html">Furret</a>
+
+                            <button onclick="toggleFavorite('Furret')">☆</button>
+
+                        </li>
+
+                        <li data-type="normal flying">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Hoothoot.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Hoothoot.html">Hoothoot</a>
+
+                            <button onclick="toggleFavorite('Hoothoot')">☆</button>
+
+                        </li>
+
+                        <li data-type="normal flying">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Noctowl.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Noctowl.html">Noctowl</a>
+
+                            <button onclick="toggleFavorite('Noctowl')">☆</button>
+
+                        </li>
+
+                        <li data-type="bug flying">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Ledyba.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Ledyba.html">Ledyba</a>
+
+                            <button onclick="toggleFavorite('Ledyba')">☆</button>
+
+                        </li>
+
+                        <li data-type="bug flying">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Ledian.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Ledian.html">Ledian</a>
+
+                            <button onclick="toggleFavorite('Ledian')">☆</button>
+
+                        </li>
+
+                        <li data-type="bug poison">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Spinarak.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Spinarak.html">Spinarak</a>
+
+                            <button onclick="toggleFavorite('Spinarak')">☆</button>
+
+                        </li>
+
+                        <li data-type="bug poison">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Ariados.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Ariados.html">Ariados</a>
+
+                            <button onclick="toggleFavorite('Ariados')">☆</button>
+
+                        </li>
+
+                        <li data-type="poison flying">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Crobat.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Crobat.html">Crobat</a>
+
+                            <button onclick="toggleFavorite('Crobat')">☆</button>
+
+                        </li>
+
+                        <li data-type="water electric">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Chinchou.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Chinchou.html">Chinchou</a>
+
+                            <button onclick="toggleFavorite('Chinchou')">☆</button>
+
+                        </li>
+
+                        <li data-type="water electric">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Lanturn.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Lanturn.html">Lanturn</a>
+
+                            <button onclick="toggleFavorite('Lanturn')">☆</button>
+
+                        </li>
+
+                        <li data-type="electric">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Pichu.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Pichu.html">Pichu</a>
+
+                            <button onclick="toggleFavorite('Pichu')">☆</button>
+
+                        </li>
+
+                        <li data-type="fairy">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Cleffa.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Cleffa.html">Cleffa</a>
+
+                            <button onclick="toggleFavorite('Cleffa')">☆</button>
+
+                        </li>
+
+                        <li data-type="normal fairy">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Igglybuff.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Igglybuff.html">Igglybuff</a>
+
+                            <button onclick="toggleFavorite('Igglybuff')">☆</button>
+
+                        </li>
+
+                        <li data-type="fairy">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Togepi.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Togepi.html">Togepi</a>
+
+                            <button onclick="toggleFavorite('Togepi')">☆</button>
+
+                        </li>
+
+                        <li data-type="fairy flying">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Togetic.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Togetic.html">Togetic</a>
+
+                            <button onclick="toggleFavorite('Togetic')">☆</button>
+
+                        </li>
+
+                        <li data-type="psychic flying">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Natu.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Natu.html">Natu</a>
+
+                            <button onclick="toggleFavorite('Natu')">☆</button>
+
+                        </li>
+
+                        <li data-type="psychic flying">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Xatu.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Xatu.html">Xatu</a>
+
+                            <button onclick="toggleFavorite('Xatu')">☆</button>
+
+                        </li>
+
+                        <li data-type="electric">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Mareep.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Mareep.html">Mareep</a>
+
+                            <button onclick="toggleFavorite('Mareep')">☆</button>
+
+                        </li>
+
+                        <li data-type="electric">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Flaaffy.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Flaaffy.html">Flaaffy</a>
+
+                            <button onclick="toggleFavorite('Flaaffy')">☆</button>
+
+                        </li>
+
+                        <li data-type="electric">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Ampharos.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Ampharos.html">Ampharos</a>
+
+                            <button onclick="toggleFavorite('Ampharos')">☆</button>
+
+                        </li>
+
+                        <li data-type="grass">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Bellossom.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Bellossom.html">Bellossom</a>
+
+                            <button onclick="toggleFavorite('Bellossom')">☆</button>
+
+                        </li>
+
+                        <li data-type="water fairy">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Marill.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Marill.html">Marill</a>
+
+                            <button onclick="toggleFavorite('Marill')">☆</button>
+
+                        </li>
+
+                        <li data-type="water fairy">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Azumarill.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Azumarill.html">Azumarill</a>
+
+                            <button onclick="toggleFavorite('Azumarill')">☆</button>
+
+                        </li>
+
+                        <li data-type="rock">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Sudowoodo.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Sudowoodo.html">Sudowoodo</a>
+
+                            <button onclick="toggleFavorite('Sudowoodo')">☆</button>
+
+                        </li>
+
+                        <li data-type="water">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Politoed.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Politoed.html">Politoed</a>
+
+                            <button onclick="toggleFavorite('Politoed')">☆</button>
+
+                        </li>
+
+                        <li data-type="grass flying">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Hoppip.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Hoppip.html">Hoppip</a>
+
+                            <button onclick="toggleFavorite('Hoppip')">☆</button>
+
+                        </li>
+
+                        <li data-type="grass flying">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Skiploom.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Skiploom.html">Skiploom</a>
+
+                            <button onclick="toggleFavorite('Skiploom')">☆</button>
+
+                        </li>
+
+                        <li data-type="grass flying">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Jumpluff.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Jumpluff.html">Jumpluff</a>
+
+                            <button onclick="toggleFavorite('Jumpluff')">☆</button>
+
+                        </li>
+
+                        <li data-type="normal">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Aipom.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Aipom.html">Aipom</a>
+
+                            <button onclick="toggleFavorite('Aipom')">☆</button>
+
+                        </li>
+
+                        <li data-type="grass">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Sunkern.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Sunkern.html">Sunkern</a>
+
+                            <button onclick="toggleFavorite('Sunkern')">☆</button>
+
+                        </li>
+
+                        <li data-type="grass">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Sunflora.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Sunflora.html">Sunflora</a>
+
+                            <button onclick="toggleFavorite('Sunflora')">☆</button>
+
+                        </li>
+
+                        <li data-type="bug flying">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Yanma.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Yanma.html">Yanma</a>
+
+                            <button onclick="toggleFavorite('Yanma')">☆</button>
+
+                        </li>
+
+                        <li data-type="water ground">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Wooper.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Wooper.html">Wooper</a>
+
+                            <button onclick="toggleFavorite('Wooper')">☆</button>
+
+                        </li>
+
+                        <li data-type="water ground">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Quagsire.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Quagsire.html">Quagsire</a>
+
+                            <button onclick="toggleFavorite('Quagsire')">☆</button>
+
+                        </li>
+
+                        <li data-type="psychic">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Espeon.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Espeon.html">Espeon</a>
+
+                            <button onclick="toggleFavorite('Espeon')">☆</button>
+
+                        </li>
+
+                        <li data-type="dark">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Umbreon.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Umbreon.html">Umbreon</a>
+
+                            <button onclick="toggleFavorite('Umbreon')">☆</button>
+
+                        </li>
+
+                        <li data-type="dark flying">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Murkrow.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Murkrow.html">Murkrow</a>
+
+                            <button onclick="toggleFavorite('Murkrow')">☆</button>
+
+                        </li>
+
+                        <li data-type="water psychic">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Slowking.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Slowking.html">Slowking</a>
+
+                            <button onclick="toggleFavorite('Slowking')">☆</button>
+
+                        </li>
+
+                        <li data-type="ghost">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Misdreavus.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Misdreavus.html">Misdreavus</a>
+
+                            <button onclick="toggleFavorite('Misdreavus')">☆</button>
+
+                        </li>
+
+                        <li data-type="psychic">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Unown.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Unown.html">Unown</a>
+
+                            <button onclick="toggleFavorite('Unown')">☆</button>
+
+                        </li>
+
+                        <li data-type="psychic">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Wobbuffet.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Wobbuffet.html">Wobbuffet</a>
+
+                            <button onclick="toggleFavorite('Wobbuffet')">☆</button>
+
+                        </li>
+
+                        <li data-type="normal psychic">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Girafarig.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Girafarig.html">Girafarig</a>
+
+                            <button onclick="toggleFavorite('Girafarig')">☆</button>
+
+                        </li>
+
+                        <li data-type="bug">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Pineco.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Pineco.html">Pineco</a>
+
+                            <button onclick="toggleFavorite('Pineco')">☆</button>
+
+                        </li>
+
+                        <li data-type="bug steel">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Forretress.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Forretress.html">Forretress</a>
+
+                            <button onclick="toggleFavorite('Forretress')">☆</button>
+
+                        </li>
+
+                        <li data-type="normal">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Dunsparce.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Dunsparce.html">Dunsparce</a>
+
+                            <button onclick="toggleFavorite('Dunsparce')">☆</button>
+
+                        </li>
+
+                        <li data-type="ground flying">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Gligar.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Gligar.html">Gligar</a>
+
+                            <button onclick="toggleFavorite('Gligar')">☆</button>
+
+                        </li>
+
+                        <li data-type="steel ground">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Steelix.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Steelix.html">Steelix</a>
+
+                            <button onclick="toggleFavorite('Steelix')">☆</button>
+
+                        </li>
+
+                        <li data-type="fairy">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Snubbull.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Snubbull.html">Snubbull</a>
+
+                            <button onclick="toggleFavorite('Snubbull')">☆</button>
+
+                        </li>
+
+                        <li data-type="fairy">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Granbull.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Granbull.html">Granbull</a>
+
+                            <button onclick="toggleFavorite('Granbull')">☆</button>
+
+                        </li>
+
+                        <li data-type="water poison">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Qwilfish.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Qwilfish.html">Qwilfish</a>
+
+                            <button onclick="toggleFavorite('Qwilfish')">☆</button>
+
+                        </li>
+
+                        <li data-type="bug steel">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Scizor.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Scizor.html">Scizor</a>
+
+                            <button onclick="toggleFavorite('Scizor')">☆</button>
+
+                        </li>
+
+                        <li data-type="bug rock">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Shuckle.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Shuckle.html">Shuckle</a>
+
+                            <button onclick="toggleFavorite('Shuckle')">☆</button>
+
+                        </li>
+
+                        <li data-type="bug fighting">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Heracross.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Heracross.html">Heracross</a>
+
+                            <button onclick="toggleFavorite('Heracross')">☆</button>
+
+                        </li>
+
+                        <li data-type="dark ice">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Sneasel.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Sneasel.html">Sneasel</a>
+
+                            <button onclick="toggleFavorite('Sneasel')">☆</button>
+
+                        </li>
+
+                        <li data-type="normal">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Teddiursa.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Teddiursa.html">Teddiursa</a>
+
+                            <button onclick="toggleFavorite('Teddiursa')">☆</button>
+
+                        </li>
+
+                        <li data-type="normal">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Ursaring.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Ursaring.html">Ursaring</a>
+
+                            <button onclick="toggleFavorite('Ursaring')">☆</button>
+
+                        </li>
+
+                        <li data-type="fire">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Slugma.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Slugma.html">Slugma</a>
+
+                            <button onclick="toggleFavorite('Slugma')">☆</button>
+
+                        </li>
+
+                        <li data-type="fire rock">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Magcargo.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Magcargo.html">Magcargo</a>
+
+                            <button onclick="toggleFavorite('Magcargo')">☆</button>
+
+                        </li>
+
+                        <li data-type="ice ground">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Swinub.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Swinub.html">Swinub</a>
+
+                            <button onclick="toggleFavorite('Swinub')">☆</button>
+
+                        </li>
+
+                        <li data-type="ice ground">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Piloswine.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Piloswine.html">Piloswine</a>
+
+                            <button onclick="toggleFavorite('Piloswine')">☆</button>
+
+                        </li>
+
+                        <li data-type="water rock">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Corsola.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Corsola.html">Corsola</a>
+
+                            <button onclick="toggleFavorite('Corsola')">☆</button>
+
+                        </li>
+
+                        <li data-type="water">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Remoraid.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Remoraid.html">Remoraid</a>
+
+                            <button onclick="toggleFavorite('Remoraid')">☆</button>
+
+                        </li>
+
+                        <li data-type="water">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Octillery.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Octillery.html">Octillery</a>
+
+                            <button onclick="toggleFavorite('Octillery')">☆</button>
+
+                        </li>
+
+                        <li data-type="ice flying">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Delibird.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Delibird.html">Delibird</a>
+
+                            <button onclick="toggleFavorite('Delibird')">☆</button>
+
+                        </li>
+
+                        <li data-type="water flying">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Mantine.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Mantine.html">Mantine</a>
+
+                            <button onclick="toggleFavorite('Mantine')">☆</button>
+
+                        </li>
+
+                        <li data-type="steel flying">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Skarmory.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Skarmory.html">Skarmory</a>
+
+                            <button onclick="toggleFavorite('Skarmory')">☆</button>
+
+                        </li>
+
+                        <li data-type="dark fire">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Houndour.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Houndour.html">Houndour</a>
+
+                            <button onclick="toggleFavorite('Houndour')">☆</button>
+
+                        </li>
+
+                        <li data-type="dark fire">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Houndoom.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Houndoom.html">Houndoom</a>
+
+                            <button onclick="toggleFavorite('Houndoom')">☆</button>
+
+                        </li>
+
+                        <li data-type="water dragon">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Kingdra.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Kingdra.html">Kingdra</a>
+
+                            <button onclick="toggleFavorite('Kingdra')">☆</button>
+
+                        </li>
+
+                        <li data-type="ground">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Phanpy.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Phanpy.html">Phanpy</a>
+
+                            <button onclick="toggleFavorite('Phanpy')">☆</button>
+
+                        </li>
+
+                        <li data-type="ground">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Donphan.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Donphan.html">Donphan</a>
+
+                            <button onclick="toggleFavorite('Donphan')">☆</button>
+
+                        </li>
+
+                        <li data-type="normal">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Porygon2.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Porygon2.html">Porygon2</a>
+
+                            <button onclick="toggleFavorite('Porygon2')">☆</button>
+
+                        </li>
+
+                        <li data-type="normal">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Stantler.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Stantler.html">Stantler</a>
+
+                            <button onclick="toggleFavorite('Stantler')">☆</button>
+
+                        </li>
+
+                        <li data-type="normal">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Smeargle.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Smeargle.html">Smeargle</a>
+
+                            <button onclick="toggleFavorite('Smeargle')">☆</button>
+
+                        </li>
+
+                        <li data-type="fighting">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Tyrogue.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Tyrogue.html">Tyrogue</a>
+
+                            <button onclick="toggleFavorite('Tyrogue')">☆</button>
+
+                        </li>
+
+                        <li data-type="fighting">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Hitmontop.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Hitmontop.html">Hitmontop</a>
+
+                            <button onclick="toggleFavorite('Hitmontop')">☆</button>
+
+                        </li>
+
+                        <li data-type="ice psychic">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Smoochum.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Smoochum.html">Smoochum</a>
+
+                            <button onclick="toggleFavorite('Smoochum')">☆</button>
+
+                        </li>
+
+                        <li data-type="electric">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Elekid.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Elekid.html">Elekid</a>
+
+                            <button onclick="toggleFavorite('Elekid')">☆</button>
+
+                        </li>
+
+                        <li data-type="fire">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Magby.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Magby.html">Magby</a>
+
+                            <button onclick="toggleFavorite('Magby')">☆</button>
+
+                        </li>
+
+                        <li data-type="normal">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Miltank.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Miltank.html">Miltank</a>
+
+                            <button onclick="toggleFavorite('Miltank')">☆</button>
+
+                        </li>
+
+                        <li data-type="normal">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Blissey.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Blissey.html">Blissey</a>
+
+                            <button onclick="toggleFavorite('Blissey')">☆</button>
+
+                        </li>
+
+                        <li data-type="electric">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Raikou.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Raikou.html">Raikou</a>
+
+                            <button onclick="toggleFavorite('Raikou')">☆</button>
+
+                        </li>
+
+                        <li data-type="fire">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Entei.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Entei.html">Entei</a>
+
+                            <button onclick="toggleFavorite('Entei')">☆</button>
+
+                        </li>
+
+                        <li data-type="water">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Suicune.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Suicune.html">Suicune</a>
+
+                            <button onclick="toggleFavorite('Suicune')">☆</button>
+
+                        </li>
+
+                        <li data-type="rock ground">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Larvitar.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Larvitar.html">Larvitar</a>
+
+                            <button onclick="toggleFavorite('Larvitar')">☆</button>
+
+                        </li>
+
+                        <li data-type="rock ground">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Pupitar.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Pupitar.html">Pupitar</a>
+
+                            <button onclick="toggleFavorite('Pupitar')">☆</button>
+
+                        </li>
+
+                        <li data-type="rock dark">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Tyranitar.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Tyranitar.html">Tyranitar</a>
+
+                            <button onclick="toggleFavorite('Tyranitar')">☆</button>
+
+                        </li>
+
+                        <li data-type="psychic flying">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Lugia.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Lugia.html">Lugia</a>
+
+                            <button onclick="toggleFavorite('Lugia')">☆</button>
+
+                        </li>
+
+                        <li data-type="fire flying">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/hooh.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Ho-Oh.html">Ho-Oh</a>
+
+                            <button onclick="toggleFavorite('Ho-Oh')">☆</button>
+
+                        </li>
+
+                        <li data-type="psychic grass">
+
+                            <span class="pokeball"></span>
+
+                            <img src="img/Celebi.gif" class="pokeImg">
+
+                            <a href="Pokemony/Gen2/Celebi.html">Celebi</a>
+
+                            <button onclick="toggleFavorite('Celebi')">☆</button>
+
+                        </li>
+
+                    </ul>
+
+                </ol>
+
+            </div>
+            <!-- Gen 3 Pokémon List -->
+            <div class="gen-list" id="gen3">
+                <ol class="pokedex">
+
+                    <li data-type="grass">
+                        <span class="pokeball"></span>
+                        <img src="img/treecko.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Treecko.html">Treecko</a>
+                        <button onclick="toggleFavorite('Treecko')">☆</button>
+
+                    <li data-type="grass">
+                        <span class="pokeball"></span>
+                        <img src="img/grovyle.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Grovyle.html">Grovyle</a>
+                        <button onclick="toggleFavorite('Grovyle')">☆</button>
+                    </li>
+                    <li data-type="grass">
+                        <span class="pokeball"></span>
+                        <img src="img/sceptile.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Sceptile.html">Sceptile</a>
+                        <button onclick="toggleFavorite('Sceptile')">☆</button>
+                    </li>
+                    <li data-type="fire">
+                        <span class="pokeball"></span>
+                        <img src="img/torchic.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Torchic.html">Torchic</a>
+                        <button onclick="toggleFavorite('Torchic')">☆</button>
+                    </li>
+                    <li data-type="fire fighting">
+                        <span class="pokeball"></span>
+                        <img src="img/combusken.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Combusken.html">Combusken</a>
+                        <button onclick="toggleFavorite('Combusken')">☆</button>
+                    </li>
+                    <li data-type="fire fighting">
+                        <span class="pokeball"></span>
+                        <img src="img/blaziken.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Blaziken.html">Blaziken</a>
+                        <button onclick="toggleFavorite('Blaziken')">☆</button>
+                    </li>
+                    <li data-type="water">
+                        <span class="pokeball"></span>
+                        <img src="img/mudkip.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Mudkip.html">Mudkip</a>
+                        <button onclick="toggleFavorite('Mudkip')">☆</button>
+                    </li>
+                    <li data-type="water ground">
+                        <span class="pokeball"></span>
+                        <img src="img/marshtomp.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Marshtomp.html">Marshtomp</a>
+                        <button onclick="toggleFavorite('Marshtomp')">☆</button>
+                    </li>
+                    <li data-type="water ground">
+                        <span class="pokeball"></span>
+                        <img src="img/swampert.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Swampert.html">Swampert</a>
+                        <button onclick="toggleFavorite('Swampert')">☆</button>
+                    </li>
+
+                    <li data-type="dark">
+                        <span class="pokeball"></span>
+                        <img src="img/poochyena.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Poochyena.html">Poochyena</a>
+                        <button onclick="toggleFavorite('Poochyena')">☆</button>
+                    </li>
+                    <li data-type="dark">
+                        <span class="pokeball"></span>
+                        <img src="img/mightyena.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Mightyena.html">Mightyena</a>
+                        <button onclick="toggleFavorite('Mightyena')">☆</button>
+                    </li>
+                    <li data-type="normal">
+                        <span class="pokeball"></span>
+                        <img src="img/zigzagoon.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Zigzagoon.html">Zigzagoon</a>
+                        <button onclick="toggleFavorite('Zigzagoon')">☆</button>
+                    </li>  <li data-type="normal"> <span class="pokeball"></span> <img
+                            src="img/linoone.gif" class="pokeImg"> <a href="Pokemony/Gen3/Linoone.html">Linoone</a>
+                        <button onclick="toggleFavorite('Linoone')">☆</button> </li>  <li
+                        data-type="bug"> <span class="pokeball"></span> <img src="img/wurmple.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Wurmple.html">Wurmple</a> <button
+                            onclick="toggleFavorite('Wurmple')">☆</button> </li>  <li data-type="bug">
+                        <span class="pokeball"></span> <img src="img/silcoon.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Silcoon.html">Silcoon</a> <button
+                            onclick="toggleFavorite('Silcoon')">☆</button> </li>  <li
+                        data-type="bug flying"> <span class="pokeball"></span> <img src="img/beautifly.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Beautifly.html">Beautifly</a> <button
+                            onclick="toggleFavorite('Beautifly')">☆</button> </li>  <li data-type="bug">
+                        <span class="pokeball"></span> <img src="img/cascoon.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Cascoon.html">Cascoon</a> <button
+                            onclick="toggleFavorite('Cascoon')">☆</button> </li>  <li
+                        data-type="bug poison"> <span class="pokeball"></span> <img src="img/dustox.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Dustox.html">Dustox</a> <button
+                            onclick="toggleFavorite('Dustox')">☆</button> </li>  <li
+                        data-type="water grass"> <span class="pokeball"></span> <img src="img/lotad.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Lotad.html">Lotad</a> <button
+                            onclick="toggleFavorite('Lotad')">☆</button> </li>  <li
+                        data-type="water grass"> <span class="pokeball"></span> <img src="img/lombre.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Lombre.html">Lombre</a> <button
+                            onclick="toggleFavorite('Lombre')">☆</button> </li>  <li
+                        data-type="water grass"> <span class="pokeball"></span> <img src="img/ludicolo.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Ludicolo.html">Ludicolo</a> <button
+                            onclick="toggleFavorite('Ludicolo')">☆</button> </li>  <li
+                        data-type="grass"> <span class="pokeball"></span> <img src="img/seedot.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Seedot.html">Seedot</a> <button
+                            onclick="toggleFavorite('Seedot')">☆</button> <button
+                            onclick="toggleFavorite('Seedot')">☆</button> </li>  <li
+                        data-type="grass dark"> <span class="pokeball"></span> <img src="img/nuzleaf.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Nuzleaf.html">Nuzleaf</a> <button
+                            onclick="toggleFavorite('Nuzleaf')">☆</button> <button
+                            onclick="toggleFavorite('Nuzleaf')">☆</button> </li>
+                    </li> <li data-type="grass dark"> <span class="pokeball"></span>
+                        <img src="img/shiftry.gif" class="pokeImg"> <a href="Pokemony/Gen3/Shiftry.html">Shiftry</a>
+                        <button onclick="toggleFavorite('Shiftry')">☆</button> </li>  <li
+                        data-type="normal flying"> <span class="pokeball"></span> <img src="img/taillow.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Taillow.html">Taillow</a> <button
+                            onclick="toggleFavorite('Taillow')">☆</button> </li>  <li
+                        data-type="normal flying"> <span class="pokeball"></span> <img src="img/swellow.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Swellow.html">Swellow</a> <button
+                            onclick="toggleFavorite('Swellow')">☆</button> </li>
+                    </li>  <li data-type="water flying"> 
+                    <li data-type="water flying">
+                    <li data-type="water flying"> <span class="pokeball"></span> <span class="pokeball"></span> <img
+                            src="img/wingull.gif" class="pokeImg"> <img src="img/wingull.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Wingull.html">Wingull</a> <a
+                            href="Pokemony/Gen3/Wingull.html">Wingull</a> <button
+                            onclick="toggleFavorite('Wingull')">☆</button> <button
+                            onclick="toggleFavorite('Wingull')">☆</button> </li>  <li
+                        data-type="water flying"> <span class="pokeball"></span> <img src="img/pelipper.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Pelipper.html">Pelipper</a> <button
+                            onclick="toggleFavorite('Pelipper')">☆</button> </li>   <li
+                        data-type="psychic fairy"> <span class="pokeball"></span> <img src="img/ralts.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Ralts.html">Ralts</a> <button
+                            onclick="toggleFavorite('Ralts')">☆</button> </li>  <li
+                        data-type="psychic fairy"> <span class="pokeball"></span> <img src="img/kirlia.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Kirlia.html">Kirlia</a> <button
+                            onclick="toggleFavorite('Kirlia')">☆</button> </li>  <li
+                        data-type="psychic fairy"> <span class="pokeball"></span> <img src="img/gardevoir.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Gardevoir.html">Gardevoir</a> <button
+                            onclick="toggleFavorite('Gardevoir')">☆</button> </li>  <li
+                        data-type="bug water"> <span class="pokeball"></span> <img src="img/surskit.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Surskit.html">Surskit</a> <button
+                            onclick="toggleFavorite('Surskit')">☆</button> </li>  <li
+                        data-type="bug flying"> <span class="pokeball"></span> <img src="img/masquerain.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Masquerain.html">Masquerain</a> <button
+                            onclick="toggleFavorite('Masquerain')">☆</button> </li>  <li
+                        data-type="grass"> <img src="img/shroomish.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Shroomish.html">Shroomish</a> <button
+                            onclick="toggleFavorite('Shroomish')">☆</button> </li>  <li
+                        data-type="grass fighting"> <span class="pokeball"></span> <img src="img/breloom.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Breloom.html">Breloom</a> <button
+                            onclick="toggleFavorite('Breloom')">☆</button> </li>  <li
+                        data-type="normal"> <span class="pokeball"></span> <img src="img/slakoth.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Slakoth.html">Slakoth</a> <button
+                            onclick="toggleFavorite('Slakoth')">☆</button> </li> <li
+                        data-type="normal"> <span class="pokeball"></span> <img src="img/vigoroth.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Vigoroth.html">Vigoroth</a> <button
+                            onclick="toggleFavorite('Vigoroth')">☆</button> </li>  <li
+                        data-type="normal"> <span class="pokeball"></span> <img src="img/slaking.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Slaking.html">Slaking</a> <button
+                            onclick="toggleFavorite('Slaking')">☆</button> </li>  <li
+                        data-type="bug ground"> <span class="pokeball"></span> <img src="img/nincada.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Nincada.html">Nincada</a> <button
+                            onclick="toggleFavorite('Nincada')">☆</button> </li>  <li
+                        data-type="bug flying"> <span class="pokeball"></span> <img src="img/ninjask.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Ninjask.html">Ninjask</a> <button
+                            onclick="toggleFavorite('Ninjask')">☆</button> </li>  <li
+                        data-type="bug ghost"> <span class="pokeball"></span> <img src="img/shedinja.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Shedinja.html">Shedinja</a> <button
+                            onclick="toggleFavorite('Shedinja')">☆</button> </li>  <li
+                        data-type="normal"> <span class="pokeball"></span> <img src="img/whismur.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Whismur.html">Whismur</a> <button
+                            onclick="toggleFavorite('Whismur')">☆</button> </li>  <li
+                        data-type="normal"> <span class="pokeball"></span> <img src="img/loudred.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Loudred.html">Loudred</a> <button
+                            onclick="toggleFavorite('Loudred')">☆</button> </li>  <li
+                        data-type="normal"> <span class="pokeball"></span> <img src="img/exploud.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Exploud.html">Exploud</a> <button
+                            onclick="toggleFavorite('Exploud')">☆</button> </li>  <li
+                        data-type="fighting"> <span class="pokeball"></span> <img src="img/makuhita.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Makuhita.html">Makuhita</a> <button
+                            onclick="toggleFavorite('Makuhita')">☆</button> </li>  <li
+                        data-type="fighting"> <span class="pokeball"></span> <img src="img/hariyama.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Hariyama.html">Hariyama</a> <button
+                            onclick="toggleFavorite('Hariyama')">☆</button> </li>  <li
+                        data-type="normal fairy"> <span class="pokeball"></span> <img src="img/azurill.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Azurill.html">Azurill</a> <button
+                            onclick="toggleFavorite('Azurill')">☆</button> </li> <li data-type="rock">
+                        <span class="pokeball"></span> <img src="img/nosepass.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Nosepass.html">Nosepass</a> <button
+                            onclick="toggleFavorite('Nosepass')">☆</button> </li>   <li
+                        data-type="normal"> <span class="pokeball"></span> <img src="img/skitty.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Skitty.html">Skitty</a> <button
+                            onclick="toggleFavorite('Skitty')">☆</button> </li>   <li data-type="normal">
+                        <span class="pokeball"></span> <img src="img/delcatty.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Delcatty.html">Delcatty</a> <button
+                            onclick="toggleFavorite('Delcatty')">☆</button> </li>   <li
+                        data-type="dark ghost"> <span class="pokeball"></span> <img src="img/sableye.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Sableye.html">Sableye</a> <button
+                            onclick="toggleFavorite('Sableye')">☆</button> </li>   <li
+                        data-type="steel fairy"> <span class="pokeball"></span> <img src="img/mawile.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Mawile.html">Mawile</a> <button
+                            onclick="toggleFavorite('Mawile')">☆</button> </li>   <li
+                        data-type="steel rock"> <span class="pokeball"></span> <img src="img/aron.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Aron.html">Aron</a> <button onclick="toggleFavorite('Aron')">☆</button>
+                    </li>  <li data-type="steel rock"> <span class="pokeball"></span> <img
+                            src="img/lairon.gif" class="pokeImg"> <a href="Pokemony/Gen3/Lairon.html">Lairon</a> <button
+                            onclick="toggleFavorite('Lairon')">☆</button> </li>   <li
+                        data-type="steel rock"> <span class="pokeball"></span> <img src="img/aggron.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Aggron.html">Aggron</a> <button
+                            onclick="toggleFavorite('Aggron')">☆</button> </li>   <li
+                        data-type="fighting psychic"> <span class="pokeball"></span> <img src="img/meditite.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Meditite.html">Meditite</a> <button
+                            onclick="toggleFavorite('Meditite')">☆</button> </li>   <li
+                        data-type="fighting psychic"> <span class="pokeball"></span> <img src="img/medicham.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Medicham.html">Medicham</a> <button
+                            onclick="toggleFavorite('Medicham')">☆</button> </li>   <li
+                        data-type="electric"> <span class="pokeball"></span> <img src="img/electrike.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Electrike.html">Electrike</a> <button
+                            onclick="toggleFavorite('Electrike')">☆</button> </li>   <li
+                        data-type="electric"> <span class="pokeball"></span> <img src="img/manectric.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Manectric.html">Manectric</a> <button
+                            onclick="toggleFavorite('Manectric')">☆</button> </li>   <li
+                        data-type="electric"> <span class="pokeball"></span> <img src="img/plusle.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Plusle.html">Plusle</a> <button
+                            onclick="toggleFavorite('Plusle')">☆</button> </li>   <li
+                        data-type="electric"> <span class="pokeball"></span> <img src="img/minun.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Minun.html">Minun</a> <button
+                            onclick="toggleFavorite('Minun')">☆</button> </li>   <li data-type="bug">
+                        <span class="pokeball"></span> <img src="img/volbeat.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Volbeat.html">Volbeat</a> <button
+                            onclick="toggleFavorite('Volbeat')">☆</button> </li>   <li data-type="bug">
+                        <span class="pokeball"></span> <img src="img/illumise.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Illumise.html">Illumise</a> <button
+                            onclick="toggleFavorite('Illumise')">☆</button> </li>   <li
+                        data-type="grass poison"> <span class="pokeball"></span> <img src="img/roselia.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Roselia.html">Roselia</a> </li>   <li
+                        data-type="poison"> <span class="pokeball"></span> <img src="img/gulpin.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Gulpin.html">Gulpin</a> <button
+                            onclick="toggleFavorite('Gulpin')">☆</button> </li>   <li data-type="poison">
+                        <span class="pokeball"></span> <img src="img/swalot.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Swalot.html">Swalot</a> <button
+                            onclick="toggleFavorite('Swalot')">☆</button> </li>   <li
+                        data-type="water dark"> <span class="pokeball"></span> <img src="img/carvanha.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Carvanha.html">Carvanha</a> <button
+                            onclick="toggleFavorite('Carvanha')">☆</button> </li>   <li
+                        data-type="water dark"> <span class="pokeball"></span> <img src="img/sharpedo.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Sharpedo.html">Sharpedo</a> <button
+                            onclick="toggleFavorite('Sharpedo')">☆</button> </li>  <li
+                        data-type="water"> <span class="pokeball"></span> <img src="img/wailmer.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Wailmer.html">Wailmer</a> <button
+                            onclick="toggleFavorite('Wailmer')">☆</button> </li>   <li data-type="water">
+                        <span class="pokeball"></span> <img src="img/wailord.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Wailord.html">Wailord</a> <button
+                            onclick="toggleFavorite('Wailord')">☆</button> </li>   <li
+                        data-type="fire ground"> <span class="pokeball"></span> <img src="img/numel.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Numel.html">Numel</a> <button
+                            onclick="toggleFavorite('Numel')">☆</button> </li>   <li
+                        data-type="fire ground"> <span class="pokeball"></span> <img src="img/camerupt.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Camerupt.html">Camerupt</a> <button
+                            onclick="toggleFavorite('Camerupt')">☆</button> </li>   <li data-type="fire">
+                        <span class="pokeball"></span> <img src="img/torkoal.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Torkoal.html">Torkoal</a> <button
+                            onclick="toggleFavorite('Torkoal')">☆</button> </li>   <li
+                        data-type="psychic"> <span class="pokeball"></span> <img src="img/spoink.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Spoink.html">Spoink</a> <button
+                            onclick="toggleFavorite('Spoink')">☆</button> </li>   <li
+                        data-type="psychic"> <span class="pokeball"></span> <img src="img/grumpig.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Grumpig.html">Grumpig</a> <button
+                            onclick="toggleFavorite('Grumpig')">☆</button> </li>   <li
+                        data-type="normal"> <span class="pokeball"></span> <img src="img/spinda.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Spinda.html">Spinda</a> <button
+                            onclick="toggleFavorite('Spinda')">☆</button> </li>   <li data-type="ground">
+                        <span class="pokeball"></span> <img src="img/trapinch.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Trapinch.html">Trapinch</a> <button
+                            onclick="toggleFavorite('Trapinch')">☆</button> </li>   <li
+                        data-type="ground dragon"> <span class="pokeball"></span> <img src="img/vibrava.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Vibrava.html">Vibrava</a> <button
+                            onclick="toggleFavorite('Vibrava')">☆</button> </li>   <li
+                        data-type="ground dragon"> <span class="pokeball"></span> <img src="img/flygon.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Flygon.html">Flygon</a> <button
+                            onclick="toggleFavorite('Flygon')">☆</button> </li>   <li data-type="grass">
+                        <span class="pokeball"></span> <img src="img/cacnea.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Cacnea.html">Cacnea</a> <button
+                            onclick="toggleFavorite('Cacnea')">☆</button> </li>   <li
+                        data-type="grass dark"> <span class="pokeball"></span> <img src="img/cacturne.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Cacturne.html">Cacturne</a> <button
+                            onclick="toggleFavorite('Cacturne')">☆</button> </li>   <li
+                        data-type="normal flying"> <span class="pokeball"></span> <img src="img/swablu.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Swablu.html">Swablu</a> <button
+                            onclick="toggleFavorite('Swablu')">☆</button> </li>   <li
+                        data-type="dragon flying"> <span class="pokeball"></span> <img src="img/altaria.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Altaria.html">Altaria</a> <button
+                            onclick="toggleFavorite('Altaria')">☆</button> </li>   <li
+                        data-type="normal"> <span class="pokeball"></span> <img src="img/zangoose.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Zangoose.html">Zangoose</a> <button
+                            onclick="toggleFavorite('Zangoose')">☆</button> </li>   <li
+                        data-type="poison"> <span class="pokeball"></span> <img src="img/seviper.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Seviper.html">Seviper</a> <button
+                            onclick="toggleFavorite('Seviper')">☆</button> </li>   <li
+                        data-type="rock psychic"> <span class="pokeball"></span> <img src="img/lunatone.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Lunatone.html">Lunatone</a> <button
+                            onclick="toggleFavorite('Lunatone')">☆</button> </li>   <li
+                        data-type="rock psychic"> <span class="pokeball"></span> <img src="img/solrock.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Solrock.html">Solrock</a> <button
+                            onclick="toggleFavorite('Solrock')">☆</button> </li>   <li
+                        data-type="water ground"> <span class="pokeball"></span> <img src="img/barboach.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Barboach.html">Barboach</a> <button
+                            onclick="toggleFavorite('Barboach')">☆</button> </li>   <li
+                        data-type="water ground"> <span class="pokeball"></span> <img src="img/whiscash.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Whiscash.html">Whiscash</a> <button
+                            onclick="toggleFavorite('Whiscash')">☆</button> </li>   <li
+                        data-type="water"> <span class="pokeball"></span> <img src="img/corphish.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Corphish.html">Corphish</a> <button
+                            onclick="toggleFavorite('Corphish')">☆</button> </li>   <li
+                        data-type="water dark"> <span class="pokeball"></span> <img src="img/crawdaunt.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Crawdaunt.html">Crawdaunt</a> <button
+                            onclick="toggleFavorite('Crawdaunt')">☆</button> </li>   <li
+                        data-type="ground psychic"> <span class="pokeball"></span> <img src="img/baltoy.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Baltoy.html">Baltoy</a> <button
+                            onclick="toggleFavorite('Baltoy')">☆</button> </li>   <li
+                        data-type="ground psychic"> <span class="pokeball"></span> <img src="img/claydol.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Claydol.html">Claydol</a> <button
+                            onclick="toggleFavorite('Claydol')">☆</button> </li>   <li
+                        data-type="rock grass"> <span class="pokeball"></span> <img src="img/lileep.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Lileep.html">Lileep</a> <button
+                            onclick="toggleFavorite('Lileep')">☆</button> </li>   <li
+                        data-type="rock grass"> <span class="pokeball"></span> <img src="img/cradily.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Cradily.html">Cradily</a> <button
+                            onclick="toggleFavorite('Cradily')">☆</button> </li>   <li
+                        data-type="rock bug"> <span class="pokeball"></span> <img src="img/anorith.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Anorith.html">Anorith</a> <button
+                            onclick="toggleFavorite('Anorith')">☆</button> </li>   <li
+                        data-type="rock bug"> <span class="pokeball"></span> <img src="img/armaldo.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Armaldo.html">Armaldo</a> <button
+                            onclick="toggleFavorite('Armaldo')">☆</button> </li>   <li data-type="water">
+                        <span class="pokeball"></span> <img src="img/feebas.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Feebas.html">Feebas</a> <button
+                            onclick="toggleFavorite('Feebas')">☆</button> </li>   <li data-type="water">
+                        <span class="pokeball"></span> <img src="img/milotic.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Milotic.html">Milotic</a> <button
+                            onclick="toggleFavorite('Milotic')">☆</button> </li>   <li
+                        data-type="normal"> <span class="pokeball"></span> <img src="img/castform.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Castform.html">Castform</a> <button
+                            onclick="toggleFavorite('Castform')">☆</button> </li>   <li
+                        data-type="normal"> <span class="pokeball"></span> <img src="img/kecleon.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Kecleon.html">Kecleon</a> <button
+                            onclick="toggleFavorite('Kecleon')">☆</button> </li>   <li data-type="ghost">
+                        <span class="pokeball"></span> <img src="img/shuppet.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Shuppet.html">Shuppet</a> <button
+                            onclick="toggleFavorite('Shuppet')">☆</button> </li>   <li data-type="ghost">
+                        <span class="pokeball"></span> <img src="img/banette.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Banette.html">Banette</a> <button
+                            onclick="toggleFavorite('Banette')">☆</button> </li>   <li data-type="ghost">
+                        <span class="pokeball"></span> <img src="img/duskull.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Duskull.html">Duskull</a> <button
+                            onclick="toggleFavorite('Duskull')">☆</button> </li>   <li data-type="ghost">
+                        <span class="pokeball"></span> <img src="img/dusclops.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Dusclops.html">Dusclops</a> <button
+                            onclick="toggleFavorite('Dusclops')">☆</button> </li>   <li
+                        data-type="grass flying"> <span class="pokeball"></span> <img src="img/tropius.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Tropius.html">Tropius</a> <button
+                            onclick="toggleFavorite('Tropius')">☆</button> </li>   <li
+                        data-type="psychic"> <span class="pokeball"></span> <img src="img/chimecho.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Chimecho.html">Chimecho</a> <button
+                            onclick="toggleFavorite('Chimecho')">☆</button> </li>   <li data-type="dark">
+                        <span class="pokeball"></span> <img src="img/absol.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Absol.html">Absol</a> <button
+                            onclick="toggleFavorite('Absol')">☆</button> </li>   <li data-type="psychic">
+                        <span class="pokeball"></span> <img src="img/wynaut.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Wynaut.html">Wynaut</a> <button
+                            onclick="toggleFavorite('Wynaut')">☆</button> </li>   <li data-type="ice">
+                        <span class="pokeball"></span> <img src="img/snorunt.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Snorunt.html">Snorunt</a> <button
+                            onclick="toggleFavorite('Snorunt')">☆</button> </li>   <li data-type="ice">
+                        <span class="pokeball"></span> <img src="img/glalie.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Glalie.html">Glalie</a> <button
+                            onclick="toggleFavorite('Glalie')">☆</button> </li>   <li
+                        data-type="ice water"> <span class="pokeball"></span> <img src="img/spheal.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Spheal.html">Spheal</a> <button
+                            onclick="toggleFavorite('Spheal')">☆</button> </li>   <li
+                        data-type="ice water"> <span class="pokeball"></span> <img src="img/sealeo.gif" class="pokeImg">
+                        <a href="Pokemony/Gen3/Sealeo.html">Sealeo</a> <button
+                            onclick="toggleFavorite('Sealeo')">☆</button> </li>   <li
+                        data-type="ice water"> <span class="pokeball"></span> <img src="img/walrein.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Walrein.html">Walrein</a> <button
+                            onclick="toggleFavorite('Walrein')">☆</button> </li>   <li data-type="water">
+                        <span class="pokeball"></span> <img src="img/clamperl.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Clamperl.html">Clamperl</a> <button
+                            onclick="toggleFavorite('Clamperl')">☆</button> </li>   <li
+                        data-type="water"> <span class="pokeball"></span> <img src="img/huntail.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Huntail.html">Huntail</a> <button
+                            onclick="toggleFavorite('Huntail')">☆</button> </li>   <li data-type="water">
+                        <span class="pokeball"></span> <img src="img/gorebyss.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Gorebyss.html">Gorebyss</a> <button
+                            onclick="toggleFavorite('Gorebyss')">☆</button> </li>   <li
+                        data-type="water rock"> <span class="pokeball"></span> <img src="img/relicanth.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Relicanth.html">Relicanth</a> <button
+                            onclick="toggleFavorite('Relicanth')">☆</button> </li>   <li
+                        data-type="water"> <span class="pokeball"></span> <img src="img/luvdisc.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Luvdisc.html">Luvdisc</a> <button
+                            onclick="toggleFavorite('Luvdisc')">☆</button> </li>   <li
+                        data-type="dragon"> <span class="pokeball"></span> <img src="img/bagon.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Bagon.html">Bagon</a> <button
+                            onclick="toggleFavorite('Bagon')">☆</button> </li>   <li data-type="dragon">
+                        <span class="pokeball"></span> <img src="img/shelgon.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Shelgon.html">Shelgon</a> <button
+                            onclick="toggleFavorite('Shelgon')">☆</button> </li>   <li
+                        data-type="dragon flying"> <span class="pokeball"></span> <img src="img/salamence.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Salamence.html">Salamence</a> <button
+                            onclick="toggleFavorite('Salamence')">☆</button> </li>   <li
+                        data-type="steel psychic"> <span class="pokeball"></span> <img src="img/beldum.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Beldum.html">Beldum</a> <button
+                            onclick="toggleFavorite('Beldum')">☆</button> </li>   <li
+                        data-type="steel psychic"> <span class="pokeball"></span> <img src="img/metang.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Metang.html">Metang</a> <button
+                            onclick="toggleFavorite('Metang')">☆</button> </li>   <li
+                        data-type="steel psychic"> <span class="pokeball"></span> <img src="img/metagross.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Metagross.html">Metagross</a> <button
+                            onclick="toggleFavorite('Metagross')">☆</button> </li>   <li
+                        data-type="rock"> <span class="pokeball"></span> <img src="img/regirock.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Regirock.html">Regirock</a> <button
+                            onclick="toggleFavorite('Regirock')">☆</button> </li>   <li data-type="ice">
+                        <span class="pokeball"></span> <img src="img/regice.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Regice.html">Regice</a> <button
+                            onclick="toggleFavorite('Regice')">☆</button> </li>   <li data-type="steel">
+                        <span class="pokeball"></span> <img src="img/registeel.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Registeel.html">Registeel</a> <button
+                            onclick="toggleFavorite('Registeel')">☆</button> </li>   <li
+                        data-type="dragon psychic"> <span class="pokeball"></span> <img src="img/latias.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Latias.html">Latias</a> <button
+                            onclick="toggleFavorite('Latias')">☆</button> </li>   <li
+                        data-type="dragon psychic"> <span class="pokeball"></span> <img src="img/latios.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Latios.html">Latios</a> <button
+                            onclick="toggleFavorite('Latios')">☆</button> </li>   <li data-type="water">
+                        <span class="pokeball"></span> <img src="img/kyogre.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Kyogre.html">Kyogre</a> <button
+                            onclick="toggleFavorite('Kyogre')">☆</button> </li>   <li data-type="ground">
+                        <span class="pokeball"></span> <img src="img/groudon.gif" class="pokeImg"> <a
+                            href="Pokemony/Gen3/Groudon.html">Groudon</a> <button
+                            onclick="toggleFavorite('Groudon')">☆</button> </li>   <li
+                        data-type="dragon flying"> <span class="pokeball"></span> <img src="img/rayquaza.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Rayquaza.html">Rayquaza</a> <button
+                            onclick="toggleFavorite('Rayquaza')">☆</button> </li>   <li
+                        data-type="steel psychic"> <span class="pokeball"></span> <img src="img/jirachi.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Jirachi.html">Jirachi</a> <button
+                            onclick="toggleFavorite('Jirachi')">☆</button> </li>   <li
+                        data-type="psychic"> <span class="pokeball"></span> <img src="img/deoxys.gif"
+                            class="pokeImg"> <a href="Pokemony/Gen3/Deoxys-normal.html">Deoxys-normal</a> <button
+                            onclick="toggleFavorite('Deoxys-normal')">☆</button> </li>
+
+                </ol>
+
+            </div>
+            <!-- Gen 4 Pokémon List -->
+            <div class="gen-list" id="gen4">
+                <ol class="pokedex">
+
+                </ol>
+
+            </div>
+            <!-- Gen 5 Pokémon List -->
+            <div class="gen-list" id="gen5">
+                <ol class="pokedex">
+
+                </ol>
+
+            </div>
+            <!-- Gen 6 Pokémon List -->
+            <div class="gen-list" id="gen6">
+                <ol class="pokedex">
+
+                </ol>
+
+            </div>
+            <!-- Gen 7 Pokémon List -->
+            <div class="gen-list" id="gen7">
+                <ol class="pokedex">
+
+                </ol>
+
+            </div>
+            <!-- Gen 8 Pokémon List -->
+            <div class="gen-list" id="gen8">
+                <ol class="pokedex">
+
+                </ol>
+
+            </div>
+            <!-- Gen 9 Pokémon List -->
+            <div class="gen-list" id="gen9">
+                <ol class="pokedex">
+
+                </ol>
+
+            </div>
+
+        </div>
     </div>
 
     <!--TEAM MENU-->
@@ -1071,188 +2729,276 @@
     <div id="teamPage" style="display: none;">
         <h2>Twój Team</h2>
 
-        <div class="team">
-            <div class="slot" onclick="selectSlot(this)">+</div>
-            <div class="slot" onclick="selectSlot(this)">+</div>
-            <div class="slot" onclick="selectSlot(this)">+</div>
-            <div class="slot" onclick="selectSlot(this)">+</div>
-            <div class="slot" onclick="selectSlot(this)">+</div>
-            <div class="slot" onclick="selectSlot(this)">+</div>
+        <div class="team-container">
+            <div class="team-slot" onclick="selectSlot(this)">+</div>
+            <div class="team-slot" onclick="selectSlot(this)">+</div>
+            <div class="team-slot" onclick="selectSlot(this)">+</div>
+            <div class="team-slot" onclick="selectSlot(this)">+</div>
+            <div class="team-slot" onclick="selectSlot(this)">+</div>
+            <div class="team-slot" onclick="selectSlot(this)">+</div>
         </div>
     </div>
 
 
-<!-- JavaScript filtering -->
-<script>
+    <!-- JavaScript filtering -->
+    <script>
 
-let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+        let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-function toggleFavorite(name){
+        function toggleFavorite(name) {
 
-if(favorites.includes(name)){
-favorites = favorites.filter(p => p !== name);
-}else{
-favorites.push(name);
-}
+            if (favorites.includes(name)) {
+                favorites = favorites.filter(p => p !== name);
+            } else {
+                favorites.push(name);
+            }
 
-localStorage.setItem("favorites", JSON.stringify(favorites));
+            localStorage.setItem("favorites", JSON.stringify(favorites));
 
-updateStars();
-filterPokemon();
+            updateStars();
+            filterPokemon();
 
-
-}
-
-const searchInput = document.getElementById("searchInput");
-const typeFilter = document.getElementById("typeFilter");
-const favoriteFilter = document.getElementById("favoriteFilter");
-
-searchInput.addEventListener("input", filterPokemon);
-typeFilter.addEventListener("change", filterPokemon);
-favoriteFilter.addEventListener("change", filterPokemon);
-
-function filterPokemon(){
-
-let search = searchInput.value.toLowerCase();
-let type = typeFilter.value;
-let onlyFavorites = favoriteFilter.checked;
-
-document.querySelectorAll("#pokemonList li").forEach(li =>{
-
-let name = li.querySelector("a").textContent.toLowerCase();
-let types = li.dataset.type;
-
-let isFavorite = favorites.includes(li.querySelector("a").textContent.trim());
-
-let show = true;
-
-if(!name.includes(search)) show = false;
-
-if(type !== "all" && !types.includes(type)) show = false;
-
-if(onlyFavorites && !isFavorite) show = false;
-
-li.style.display = show ? "flex" : "none";
-
-});
-
-}
-
-function updateStars(){
-
-    document.querySelectorAll("#pokemonList li").forEach(li =>{
-        
-        let name = li.querySelector("a").textContent.trim();
-        let button = li.querySelector("button");
-        
-        if(favorites.includes(name)){
-            button.textContent = "★";
-        }else{
-            button.textContent = "☆";
         }
-    
-    });
 
-}
+        const searchInput = document.getElementById("searchInput");
+        const typeFilter = document.getElementById("typeFilter");
+        const favoriteFilter = document.getElementById("favoriteFilter");
 
-window.onload = function(){
-    updateStars();
-};
+        searchInput.addEventListener("input", filterPokemon);
+        typeFilter.addEventListener("change", filterPokemon);
+        favoriteFilter.addEventListener("change", filterPokemon);
 
-</script>
+        function filterPokemon() {
 
-<!--Filtr Generation-->
-<script>
+            let search = searchInput.value.toLowerCase();
+            let type = typeFilter.value;
+            let onlyFavorites = favoriteFilter.checked;
 
-function showGen(genId, btn){
+            let activeGen = document.querySelector(".gen-list:not([style*='none'])");
 
-    document.querySelectorAll(".gen-list").forEach(gen =>{
-        gen.style.display = "none";
-    });
+            if (!activeGen) return;
 
-    document.getElementById(genId).style.display = "block";
+            let pokemons = activeGen.querySelectorAll("li");
 
-    document.querySelectorAll(".gen-btn").forEach(b =>{
-        b.classList.remove("active");
-    });
+            pokemons.forEach(li => {
 
-    btn.classList.add("active");
-}
+                let name = li.querySelector("a").textContent.toLowerCase();
+                let types = li.dataset.type || "";
+                let isFavorite = favorites.includes(li.querySelector("a").textContent.trim());
 
-</script>
+                let show = true;
 
-<!--JavaScript Team Menu-->
+                if (!name.includes(search)) show = false;
+                if (type !== "all" && !types.includes(type)) show = false;
+                if (onlyFavorites && !isFavorite) show = false;
 
-<script>
-    function showPage(page){
+                li.style.display = show ? "flex" : "none";
 
-        document.getElementById("listPage").style.display = "none";
-        document.getElementById("teamPage").style.display = "none";
+            });
 
-        if(page === "list"){
-            document.getElementById("listPage").style.display = "block";
-    }
+        }
 
-    if(page === "team"){
-        document.getElementById("teamPage").style.display = "block";
-    }
 
-    }
-</script>
+        function updateStars() {
 
-<!--JavaScript Dodawanie Pokémon do Teamu-->
+            document.querySelectorAll(".gen-list li").forEach(li => {
 
-<script>
+                let name = li.querySelector("a").textContent.trim();
+                let button = li.querySelector("button");
 
-let selectedSlot = null;
+                if (favorites.includes(name)) {
+                    button.textContent = "★";
+                } else {
+                    button.textContent = "☆";
+                }
 
-function selectSlot(slot){
-    selectedSlot = slot;
-    showPage("list"); // przechodzi do listy
-}
+            });
 
-/* kliknięcie pokemona */
-document.addEventListener("click", function(e){
+        }
 
-    let li = e.target.closest(".pokedex li");
+        window.onload = function () {
+            updateStars();
+        };
 
-    if(!li) return;
+    </script>
 
-    /* NIE blokujemy kliknięcia w link */
-    e.preventDefault();
+    <!--Filtr Generation-->
+    <script>
 
-    if(selectedSlot){
+        function showGen(genId, btn) {
 
-        let name = li.querySelector("a").textContent;
-        let img = li.querySelector("img").src;
+            document.querySelectorAll(".gen-list").forEach(gen => {
+                gen.style.display = "none";
+            });
 
-        selectedSlot.innerHTML = `
+            document.getElementById(genId).style.display = "block";
+
+            document.querySelectorAll(".gen-btn").forEach(b => {
+                b.classList.remove("active")
+            });
+
+            btn.classList.add("active")
+
+            localStorage.setItem("activeGen", genId)
+        }
+
+    </script>
+
+    <script>
+
+        function showGen(genId, btn) {
+
+            document.querySelectorAll(".gen-list").forEach(gen => {
+                gen.style.display = "none";
+            });
+
+            document.getElementById(genId).style.display = "block";
+
+            document.querySelectorAll(".gen-btn").forEach(b => {
+                b.classList.remove("active");
+            });
+
+            btn.classList.add("active");
+        }
+
+    </script>
+
+    <!--JavaScript Team Menu-->
+    <script>
+        function showPage(page) {
+
+            document.getElementById("listPage").style.display = "none";
+            document.getElementById("teamPage").style.display = "none";
+
+            if (page === "list") {
+                document.getElementById("listPage").style.display = "block";
+            }
+
+            if (page === "team") {
+                document.getElementById("teamPage").style.display = "block";
+            }
+
+        }
+    </script>
+
+    <!--JavaScript Dodawanie Pokémon do Teamu-->
+    <script>
+
+        let selectedSlot = null;
+
+        function selectSlot(slot) {
+            selectedSlot = slot;
+            showPage("list");
+        }
+
+        document.addEventListener("click", function (e) {
+
+            let li = e.target.closest(".pokedex li");
+
+            if (!li) return;
+
+            if (selectedSlot) {
+                e.preventDefault();
+            }
+
+            let activeGen = document.querySelector(".gen-list:not([style*='none'])");
+            if (activeGen) {
+                localStorage.setItem("activeGen", activeGen.id);
+            }
+
+            if (selectedSlot) {
+
+                let name = li.querySelector("a").textContent;
+                let img = li.querySelector("img").src;
+
+                selectedSlot.innerHTML = `
             <img src="${img}" style="width:50px;"><br>
-            ${name}
         `;
 
-        selectedSlot = null;
 
-        showPage("team"); // wraca do teamu
-    }
+                selectedSlot = null;
 
-});
+                showPage("team");
+                saveTeam();
+            }
 
-</script>
+        });
 
-</script>
+    </script>
+
+    <!-- Usuwanie Pokémon z teamu -->
+    <script>
+
+        document.addEventListener("click", function (e) {
+
+            let slot = e.target.closest(".team-slot");
+
+            if (!slot) return;
+
+            if (slot.innerHTML !== "+") {
+
+                slot.innerHTML = "+";
+                saveTeam();
+            }
+        });
+
+    </script>
+
+    <!-- Zapisywanie teamu -->
+    <script>
+
+        function saveTeam() {
+            let team = [];
+
+            document.querySelectorAll(".team-slot").forEach(slot => {
+                team.push(slot.innerHTML);
+            });
+
+            localStorage.setItem("pokemonTeam", JSON.stringify(team));
+
+        }
+
+        function loadTeam() {
+            let team = JSON.parse(localStorage.getItem("pokemonTeam"))
+
+            if (!team) return;
+
+            document.querySelectorAll(".team-slot").forEach((slot, i) => {
+                if (team[i]) {
+                    slot.innerHTML = team[i] || "+";
+                }
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", loadTeam);
+
+    </script>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+
+            let savedGen = localStorage.getItem("activeGen");
+
+            if (savedGen) {
+
+                let btn = document.querySelector(`.gen-btn[onclick*="${savedGen}"]`);
+
+                if (btn) {
+                    showGen(savedGen, btn);
+                }
+
+            } else {
+                // domyślnie gen1
+                let firstBtn = document.querySelector(".gen-btn");
+                if (firstBtn) {
+                    firstBtn.click();
+                }
+            }
+
+        });
+
+    </script>
 
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
